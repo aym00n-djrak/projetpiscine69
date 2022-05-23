@@ -9,32 +9,45 @@
 	<h1>Bienvenue dans votre espace administrateur</h1>
 
 	<form name="boutonAjout"> <input type="button" class="boutonAjoutMedecin" value="Ajouter un médecin" onclick="affichageFormulaireAjoutMedecin()" /> <br /></form>
-	<form action="http://localhost/projetpiscine69/fonctionnalitesAdminSuppressionMedecin.php" name="boutonSupprimerForm"> <input type="submit" class="boutonSupprimerMedecin" value="Supprimer un médecin"/> <br /> </form>
-		<form action="http://localhost/projetpiscine69/fonctionnalitesAdminModifMedecin.php" name="boutonModifForm"><input type="submit" class="boutonModifierMedecin" value="Modifier un médecin"/> <br /> </form>
+	<form action="http://localhost/projetpiscine69/fonctionnalitesAdminSuppressionMedecin.php" name="boutonSupprimerForm"> <input type="submit" class="boutonSupprimerMedecin" value="Supprimer un médecin" /> <br /> </form>
+	<form action="http://localhost/projetpiscine69/fonctionnalitesAdminModifMedecin.php" name="boutonModifForm"><input type="submit" class="boutonModifierMedecin" value="Modifier un médecin" /> <br /> </form>
+	<br />
+	<form name="boutonAjoutLabo"> <input type="button" class="boutonAjoutLabo" value="Ajouter un laboratoire" onclick="affichageFormulaireAjoutLabo()" /> <br /></form>
+	<form action="http://localhost/projetpiscine69/fonctionnalitesAdminSuppressionLabo.php" name="boutonSupprimerLabo"> <input type="submit" class="boutonSupprimerLabo" value="Supprimer un laboratoire" /> <br /> </form>
+	<form action="http://localhost/projetpiscine69/fonctionnalitesAdminModifLabo.php" name="boutonModifLaboForm"><input type="submit" class="boutonModifierLabo" value="Modifier un laboratoire" /> <br /> </form>
+
+	<form class="formulaireAjoutMedecin" method="POST" action="http://localhost/projetpiscine69/fonctionnalitesAdminAjoutMedecin.php">
+		<br />VEUILLEZ SAISIR LES INFORMATIONS DU NOUVEAU MEDECIN<br />
+		Nom: <input type="text" name="nomMedecin" /> <br />
+		Prenom: <input type="text" name="prenomMedecin" /> <br />
+		Spécialité: <select name="specialite">
+			<option value="">choisir...</option>
+			<option value="generaliste">Médecin généraliste</option>
+			<option value="addictologie">Addictologie</option>
+			<option value="cardiologie">Cardiologie</option>
+			<option value="dermatologie">Dermatologie</option>
+			<option value="andrologie">Andrologie</option>
+			<option value="gastro-hepato-enterologie">Gastro-Hépato-Entérologie</option>
+			<option value="gynecologie">Gynécologie</option>
+			<option value="ist">IST</option>
+			<option value="osteopathie">Ostéopathie</option>
+		</select> <br />
+		Bureau: <input type="text" name="bureauMedecin" /> <br />
+		Courriel: <input type="email" name="courrielMedecin" /> <br />
+		Téléphone: <input type="number" text" name="telMedecin" /> <br />
+		Formation CV (50 caractères maximum): <br /> <textarea maxlength="50" name="formationsCVMedecin"></textarea> <br />
+		Expériences CV (50 caractères maximum): <br /> <textarea maxlength="50" name="experiencesCVMedecin"></textarea> <br />
+		<input type="submit" name="ordreAjout" value="Ajouter ce médecin" />
+	</form>
+
+	<form class="formulaireAjoutLabo" method="POST" action="http://localhost/projetpiscine69/fonctionnalitesAdminAjoutLabo.php">
+		<br />VEUILLEZ SAISIR LES INFORMATIONS DU NOUVEAU LABORATOIRE<br />
+		Salle: <input type="text" name="salleLabo" /> <br />
+		Courriel: <input type="email" name="courrielLabo" /> <br />
+		Téléphone: <input type="number" name="telLabo" /> <br />
+		<input type="submit" name="ordreAjoutLabo" value="Ajouter ce laboratoire" />
+	</form>
 
 
-		<form class="formulaireAjoutMedecin" method="POST" action="http://localhost/projetpiscine69/fonctionnalitesAdminAjoutMedecin.php">
-			<br />VEUILLEZ SAISIR LES INFORMATIONS DU NOUVEAU MEDECIN<br />
-			Nom: <input type="text" name="nomMedecin" /> <br />
-			Prenom: <input type="text" name="prenomMedecin" /> <br />
-			Spécialité: <select name="specialite">
-				<option value="">choisir...</option>
-				<option value="generaliste">Médecin généraliste</option>
-				<option value="addictologie">Addictologie</option>
-				<option value="cardiologie">Cardiologie</option>
-				<option value="dermatologie">Dermatologie</option>
-				<option value="andrologie">Andrologie</option>
-				<option value="gastro-hepato-enterologie">Gastro-Hépato-Entérologie</option>
-				<option value="gynecologie">Gynécologie</option>
-				<option value="ist">IST</option>
-				<option value="osteopathie">Ostéopathie</option>
-			</select> <br />
-			Bureau: <input type="text" name="bureauMedecin" /> <br />
-			Courriel: <input type="email" name="courrielMedecin" /> <br />
-			Téléphone: <input type="number" text" name="telMedecin" /> <br />
-			Formation CV (50 caractères maximum): <br /> <textarea maxlength="50" name="formationsCVMedecin"></textarea> <br />
-			Expériences CV (50 caractères maximum): <br /> <textarea maxlength="50" name="experiencesCVMedecin"></textarea> <br />
-			<input type="submit" name="ordreAjout" value="Ajouter ce médecin" />
-		</form>
 </body>
 </html>

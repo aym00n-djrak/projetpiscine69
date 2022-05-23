@@ -1,20 +1,20 @@
 function affichageInitialBoutonsSansFormulaires() {
     $(document).ready(function () {
         $(".formulaireAjoutMedecin").hide();
-        $(".formulaireModifMedecin").hide();
+        $(".formulaireAjoutLabo").hide();
     });
 }
 
 function affichageFormulaireAjoutMedecin() {
     $(document).ready(function () {
         $(".formulaireAjoutMedecin").show();
-        $(".formulaireModifMedecin").hide();
+        $(".formulaireAjoutLabo").hide();
     });
 }
 
-function affichageFormulaireModifMedecin() {
+function affichageFormulaireAjoutLabo(){
     $(document).ready(function () {
+        $(".formulaireAjoutLabo").show();
         $(".formulaireAjoutMedecin").hide();
-        $(".formulaireModifMedecin").show();
     });
 }
