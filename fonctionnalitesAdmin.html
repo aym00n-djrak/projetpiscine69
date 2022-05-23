@@ -8,71 +8,33 @@
 <body onload="affichageInitialBoutonsSansFormulaires()">
 	<h1>Bienvenue dans votre espace administrateur</h1>
 
-	<form name="boutonsChoix">
-		<input type="button" class="boutonAjoutMedecin" value="Ajouter un médecin" onclick="affichageFormulaireAjoutMedecin()" /> <br />
-		<input type="button" class="boutonSupprimerMedecin" value="Supprimer un médecin" onclick="affichageFormulaireSupprimerMedecin()" /> <br />
-		<input type="button" class="boutonModifierMedecin" value="Modifier un médecin" onclick="affichageFormulaireModifMedecin()" /> <br />
-	</form>
+	<form name="boutonAjout"> <input type="button" class="boutonAjoutMedecin" value="Ajouter un médecin" onclick="affichageFormulaireAjoutMedecin()" /> <br /></form>
+	<form action="http://localhost/projetpiscine69/fonctionnalitesAdminSuppressionMedecin.php" name="boutonSupprimerForm"> <input type="submit" class="boutonSupprimerMedecin" value="Supprimer un médecin"/> <br /> </form>
+		<form action="http://localhost/projetpiscine69/fonctionnalitesAdminModifMedecin.php" name="boutonModifForm"><input type="submit" class="boutonModifierMedecin" value="Modifier un médecin"/> <br /> </form>
 
-	<form class="formulaireAjoutMedecin" method="POST" action="http://localhost/projetpiscine69/fonctionnalitesAdminAjoutMedecin.php">
-		<br />VEUILLEZ SAISIR LES INFORMATIONS DU NOUVEAU MEDECIN<br />
-		Nom: <input type="text" name="nomMedecin" /> <br />
-		Prenom: <input type="text" name="prenomMedecin" /> <br />
-		Spécialité: <select name="specialites">
-			<option value="">choisir...</option>
-			<option value="generaliste">Médecin généraliste</option>
-			<option value="addictologie">Addictologie</option>
-			<option value="cardiologie">Cardiologie</option>
-			<option value="dermatologie">Dermatologie</option>
-			<option value="andrologie">Andrologie...</option>
-			<option value="gastro-hepato-enterologie">Gastro-Hépato-Entérologie</option>
-			<option value="gynecologie">Gynécologie</option>
-			<option value="ist">IST</option>
-			<option value="osteopathie">Ostéopathie</option>
-		</select> <br />
-		Bureau: <input type="text" name="bureauMedecin" /> <br />
-		Courriel: <input type="email" name="bureauMedecin" /> <br />
-		Téléphone: <input type="number" text" name="courrielMedecin" /> <br />
-		Formation CV (50 caractères maximum): <br /> <textarea maxlength="50" name="formationCVMedecin"></textarea> <br />
-		Expériences CV (50 caractères maximum): <br /> <textarea maxlength="50" name="experiencesCVMedecin"></textarea> <br />
-		<input type="submit" name="ordreAjout" value="Ajouter ce médecin" />
-	</form>
 
-	<form class="formulaireSupprimerMedecin" method="POST" action="http://localhost/projetpiscine69/fonctionnalitesAdminSuppressionMedecin.php">
-		<br /> VEUILLEZ CHOISIR LE MEDECIN A SUPPRIMER: <select name="medecinASupprimer">
-			<option>choisir...</option>
-			<option>Nom1 Prénom1</option>
-			<option>Nom2 Prénom2</option>
-		</select> <input type="submit" name="ordreSuprression" value="Supprimer ce médecin" />
-	</form>
-
-	<form class="formulaireModifMedecin" method="POST" action="http://localhost/projetpiscine69/fonctionnalitesAdminModifMedecin.php">
-		<br />VEUILLEZ CHOISIR LE MEDECIN A MODIFIER: <select name="medecinAModifier">
-			<option>choisir...</option>
-			<option>Nom1 Prénom1</option>
-			<option>Nom2 Prénom2</option>
-		</select>
-		<br /><br />VEUILLEZ SAISIR LES INFORMATIONS A MODIFIER<br />
-		Nom: <input type="text" name="nomMedecin" /> <br />
-		Prenom: <input type="text" name="prenomMedecin" /> <br />
-		Spécialité: <select name="specialites">
-			<option value="">choisir...</option>
-			<option value="generaliste">Médecin généraliste</option>
-			<option value="addictologie">Addictologie</option>
-			<option value="cardiologie">Cardiologie</option>
-			<option value="dermatologie">Dermatologie</option>
-			<option value="andrologie">Andrologie...</option>
-			<option value="gastro-hepato-enterologie">Gastro-Hépato-Entérologie</option>
-			<option value="gynecologie">Gynécologie</option>
-			<option value="ist">IST</option>
-			<option value="osteopathie">Ostéopathie</option>
-		</select> <br />
-		Bureau: <input type="text" name="bureauMedecin" /> <br />
-		Courriel: <input type="email" name="bureauMedecin" /> <br />
-		Téléphone: <input type="number" name="courrielMedecin" /> <br />
-		Formation CV (50 caractères maximum): <br /> <textarea maxlength="50" name="formationCVMedecin"></textarea> <br />
-		Expériences CV (50 caractères maximum): <br /> <textarea maxlength="50" name="experiencesCVMedecin"></textarea> <br />
-		<input type="submit" name="ordreModification" value="Modifier ce médecin" />
-	</form>
+		<form class="formulaireAjoutMedecin" method="POST" action="http://localhost/projetpiscine69/fonctionnalitesAdminAjoutMedecin.php">
+			<br />VEUILLEZ SAISIR LES INFORMATIONS DU NOUVEAU MEDECIN<br />
+			Nom: <input type="text" name="nomMedecin" /> <br />
+			Prenom: <input type="text" name="prenomMedecin" /> <br />
+			Spécialité: <select name="specialite">
+				<option value="">choisir...</option>
+				<option value="generaliste">Médecin généraliste</option>
+				<option value="addictologie">Addictologie</option>
+				<option value="cardiologie">Cardiologie</option>
+				<option value="dermatologie">Dermatologie</option>
+				<option value="andrologie">Andrologie</option>
+				<option value="gastro-hepato-enterologie">Gastro-Hépato-Entérologie</option>
+				<option value="gynecologie">Gynécologie</option>
+				<option value="ist">IST</option>
+				<option value="osteopathie">Ostéopathie</option>
+			</select> <br />
+			Bureau: <input type="text" name="bureauMedecin" /> <br />
+			Courriel: <input type="email" name="courrielMedecin" /> <br />
+			Téléphone: <input type="number" text" name="telMedecin" /> <br />
+			Formation CV (50 caractères maximum): <br /> <textarea maxlength="50" name="formationsCVMedecin"></textarea> <br />
+			Expériences CV (50 caractères maximum): <br /> <textarea maxlength="50" name="experiencesCVMedecin"></textarea> <br />
+			<input type="submit" name="ordreAjout" value="Ajouter ce médecin" />
+		</form>
 </body>
 </html>
