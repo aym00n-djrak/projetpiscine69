@@ -1,0 +1,83 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    background: #e7f8ff;
+}
+
+/*barre de navigation*/
+/*Couleur de fond*/
+.navbar {
+    background: #18c8e0;
+}
+
+/*Coueleur du texte*/
+.nav-link,
+.navbar-brand {
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+/*Distance entre les boutons*/
+.nav-link {
+    margin-inline:2em;
+}
+
+/*Centrer les boutons*/
+.navbar-collapse {
+    justify-content:center;
+}
+
+/*Logo */
+.logo {
+    width: 180px;
+    border: solid;
+    margin: auto;  
+   
+}
+
+/*Nom*/
+.nom {
+    background-color: #fff;
+    color:#171c55;
+    margin: auto;  
+    margin-top: 10px;
+    width: 250px;
+    border: solid;
+  
+}
+
+/*en tete : image de fond*/
+.header {
+    background-image: url('https://monsieurmadameexplore.com/wp-content/uploads/2021/04/Panorama-Paris_Header-scaled.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    max-height: 400px;
+}
+
+footer {
+    height: 200px;
+}
+
+.barreDeRecherche{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 15%;
+    position: relative;
+}
+
+/*Aeration/saut de ligne*/
+.features {
+    margin: 4em auto;
+    padding: 1em;
+    position: relative;
+}
+
+/*Titre*/
+.feature-title {
+    color: #333;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
