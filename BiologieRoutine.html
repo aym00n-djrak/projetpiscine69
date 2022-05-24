@@ -2,12 +2,10 @@
 <html>
 
 <head>
-    <title>Parcours</title>
+    <title>Accueil</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="Accueil.css">
     <script type="text/javascript">
         $(document).ready(function () {
@@ -28,7 +26,7 @@
     </header>
 
     <nav class="navbar navbar-expand-md">
-        <div class="collapse navbar-collapse" id="main-navigation">
+        <div class="collapse navbar-collapse">
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="Accueil.html">Accueil</a></li>
                 <li class="nav-item"><a class="nav-link" href="Parcours.html">Tout parcourir</a></li>
@@ -39,37 +37,31 @@
         </div>
     </nav>
     <div class="container features">
-        <p class="Titre-Section">Connexion</p>
+        <h3 class="Titre-Section">Biologie de routine</h3>
         <div class="row">
-            <div class="col-lg-8 col-md-8 col-sm-20">
-                <table>
-                    <tr>
-                        <!--Nom-->
-                        <td>NomPrenom</td>
-                        <td><input type="text" name="nomClient" label="Nom du client:"></td>
-                        <!--Adresse-->
-                        <td>Adresse</td>
-                        <td><input type="text" name="adresseCLient" label="Adresse du client:"></td>
-                    </tr>
-                    <tr>
-                        <!--Email-->
-                        <td>Email :</td>
-                        <td><input type="text" name="emailClient" label="Nom du client:"></td>
-                       <!--Carte vitale-->
-                        <td>Carte Vitale :</td>
-                        <td><input type="text" name="vitalClient" label="Vital du client:"></td>
-                    </tr>
-                    <tr>
-                        <!--Bouton de validation-->
-                        <td colspan="4" align="center">
-                            <input type="submit" name="S'inscrire" value="S'inscrire" text-align="center">
-                        </td>
-                    </tr>
-                </table>
+
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <p class="feature-title">Informations :<br>
+                    <p>[Inserer Info]</p>
+                </p>
             </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <p class="feature-title">Regles :<br>
+                   <p>[Inserer Regles]</p>
+                </p>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <p class="feature-title">Calendrier :<br>
+                    <a href="">
+                        <input type="button" name="Calendrier" value="Calendrier" text-align="center">
+                      </a>
+                </p>
+            </div>
+
         </div>
     </div>
-
 
     <footer class="page-footer">
 
