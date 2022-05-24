@@ -15,7 +15,6 @@ html {
     background-color: azure;
     color: midnightblue;
     margin: auto;
-    margin-top: 10px;
     width: 250px;
     border: solid;
 }
@@ -53,6 +52,7 @@ html {
 /*Set barre entre item*/
 .nav-item {
     border-right: 1px solid azure;
+    border-left: 1px solid azure;
 }
 
 /*Barre dynamic, reste en haut quand scroll*/
