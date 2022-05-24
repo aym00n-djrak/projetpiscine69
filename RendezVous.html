@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Rendez-vous</title>
+  <title>Parcours</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -19,12 +19,12 @@
 <body>
 
   <header class="page-header header container-fluid">
-      <div class="logo">
-        <img src="logo.png">
-      </div>
-      <div class="nom">
-        <h1>Omnes Sante</h1>
-      </div>
+    <div class="logo">
+      <img src="logo.png">
+    </div>
+    <div class="nom">
+      <h1>Omnes Sante</h1>
+    </div>
   </header>
 
   <nav class="navbar navbar-expand-md">
@@ -38,14 +38,46 @@
       </ul>
     </div>
   </nav>
-
-  <div class="row">
-
-    <div class="col-lg-4 col-md-4 col-sm-12">
-      <h3 class="feature-title">Carrousel</h3>
-
-    </div>
-
+  <div class="container features">
+    <table>
+      <tr>
+        <td colspan="2">
+          <!--Titre formulaire-->
+          <h3 align="center">Liste de vos rendez-vous</h3>
+        </td>
+      </tr>
+      <tr>
+        <!--Nom-->
+        <td>Rendez-vous avec le docteur</td>
+        <td>[Inserer nom]</td>
+      </tr>
+      <tr>
+        <!--Date-->
+        <td>Date :</td>
+        <td>[Inserer date]</td>
+      </tr>
+      <tr>
+        <!--Heure-->
+        <td>Heure :</td>
+        <td>[Inserer Heure]</td>
+      </tr>
+      <tr>
+        <!--Adresse-->
+        <td>Adresse :</td>
+        <td>[Inserer Adresse]</td>
+      </tr>
+      <tr>
+        <!--Autre info-->
+        <td>Autre info :</td>
+        <td>[Inserer Autre info]</td>
+      </tr>
+      <tr>
+        <!--Bouton de validation-->
+        <td colspan="2" align="center">
+          <input type="submit" name="Annuler le RDV" value="Annuler le RDV" text-align="center">
+        </td>
+      </tr>
+    </table>
   </div>
 
   <footer class="page-footer">
