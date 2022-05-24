@@ -86,8 +86,12 @@ body {
     color: midnightblue;
 }
 
-footer {
+.footer{
     height: 400px;
+}
+
+.row-footer{
+    height: 350px;
 }
 
 /*Aeration/saut de ligne*/
