@@ -39,27 +39,30 @@
     </div>
   </nav>
   <div class="container features">
-    <div class="row">
-
-      <div class="col-lg-4 col-md-4 col-sm-12">
-        <a href="CompteClient.html">
-          <input class="btnMed" type="button" value="Client">
-        </a>
-      </div>
-
-      <div class="col-lg-4 col-md-4 col-sm-12">
-        <a href="CompteMedecin.html">
-          <input class="btnMed" type="button" value="Medecin">
-        </a>
-      </div>
-
-      <div class="col-lg-4 col-md-4 col-sm-12">
-        <a href="CompteAdmin.html">
-          <input class="btnMed" type="button" value="Administrateur">
-        </a>
-      </div>
-
-    </div>
+    <table>
+      <tr>
+        <td colspan="2">
+          <!--Titre formulaire-->
+          <h3 align="center">Connexion</h3>
+        </td>
+      </tr>
+      <tr>
+        <!--Nom-->
+        <td>NomPrenom</td>
+        <td><input type="text" name="nomMed" label="Nom du medecin:"></td>
+      </tr>
+      <tr>
+        <!--Date-->
+        <td>Email :</td>
+        <td><input type="text" name="emailMed" label="Nom du medecin:"></td>
+      </tr>
+      <tr>
+        <!--Bouton de validation-->
+        <td colspan="2" align="center">
+          <input type="submit" name="Valider" value="Valider" text-align="center">
+        </td>
+      </tr>
+    </table>
   </div>
 
   <footer class="page-footer">
