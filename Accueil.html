@@ -4,10 +4,8 @@
 <head>
   <title>Accueil</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="Accueil.css">
   <script type="text/javascript">
     $(document).ready(function () {
@@ -43,18 +41,14 @@
 
   <div class="container features">
 
-    <div class="row">
-      <div class>
-        <h2 class="feature-title">Omnes sante a ete creer en 1920 suite a la revolution birmane pour lutter contre le
-          surplus de calcaire dans les poches des ouvriers</h3>
-          <img src="" class="img-fluid">
-      </div>
-    </div>
+    <p class="title-pres">Presentation</p>
+    <p class="presentation">Omnes sante a ete creer en 1920 suite a la revolution birmane pour lutter contre le
+      surplus de calcaire dans les poches des ouvriers</p>
 
     <div class="row">
 
       <div class="col-lg-4 col-md-4 col-sm-12">
-        <h3 class="feature-title">Diminution des cas de COVID</h3>
+        <p class="feature-title">Diminution des cas de COVID</p>
         <img
           src="https://www.echosciences-loire.fr/uploads/article/image/attachment/1005446675/xl_CORONAVIRUS_LEGENDE.jpg"
           class="img-fluid">
@@ -80,14 +74,109 @@
           LE weekend du 4 et 5 mai Omnes Sante organise une jpo...
         </p>
       </div>
+
     </div>
+    
+    <div class="emplacementCarrousel">
 
-    <div class="row">
+      <section class="carousel" aria-label="Gallery">
+        
+        <ol class="carousel__viewport">
+          <li id="carousel__slide1" tabindex="0" class="carousel__slide">
+            <a href="Recherche.html">
+              <div class="carousel__snapper">
+                <a href="#carousel__slide8" class="carousel__prev">Go to last slide</a>
+                <a href="#carousel__slide2" class="carousel__next">Go to next slide</a>
+              </div>
+            </a>
+          </li>
 
-      <div class="col-lg-4 col-md-4 col-sm-12">
-        <h3 class="feature-title">Carrousel</h3>
+          <li id="carousel__slide2" tabindex="0" class="carousel__slide">
+            <div class="carousel__snapper"></div>
+            <a href="#carousel__slide1" class="carousel__prev">Go to previous slide</a>
+            <a href="#carousel__slide3" class="carousel__next">Go to next slide</a>
+          </li>
 
-      </div>
+          <li id="carousel__slide3" tabindex="0" class="carousel__slide">
+            <div class="carousel__snapper"></div>
+            <a href="#carousel__slide2" class="carousel__prev">Go to previous slide</a>
+            <a href="#carousel__slide4" class="carousel__next">Go to next slide</a>
+          </li>
+
+          <li id="carousel__slide4" tabindex="0" class="carousel__slide">
+            <div class="carousel__snapper"></div>
+            <a href="#carousel__slide3" class="carousel__prev">Go to previous slide</a>
+            <a href="#carousel__slide5" class="carousel__next">Go to next slide</a>
+          </li>
+
+          <li id="carousel__slide5" tabindex="0" class="carousel__slide">
+            <div class="carousel__snapper"></div>
+            <a href="#carousel__slide4" class="carousel__prev">Go to previous slide</a>
+            <a href="#carousel__slide6" class="carousel__next">Go to next slide</a>
+          </li>
+
+          <li id="carousel__slide6" tabindex="0" class="carousel__slide">
+            <div class="carousel__snapper"></div>
+            <a href="#carousel__slide5" class="carousel__prev">Go to previous slide</a>
+            <a href="#carousel__slide7" class="carousel__next">Go to next slide</a>
+          </li>
+
+          <li id="carousel__slide7" tabindex="0" class="carousel__slide">
+            <div class="carousel__snapper"></div>
+            <a href="#carousel__slide6" class="carousel__prev">Go to previous slide</a>
+            <a href="#carousel__slide8" class="carousel__next">Go to next slide</a>
+          </li>
+
+          <li id="carousel__slide8" tabindex="0" class="carousel__slide">
+            <div class="carousel__snapper"></div>
+            <a href="#carousel__slide7" class="carousel__prev">Go to previous slide</a>
+            <a href="#carousel__slide1" class="carousel__next">Go to next slide</a>
+          </li>
+
+        </ol>
+
+        <aside class="carousel__navigation">
+
+          <ol class="carousel__navigation-list">
+
+            <li class="carousel__navigation-item">
+
+              <a href="#carousel__slide1" class="carousel__navigation-button">Go to slide 1</a>
+            </li>
+
+            <li class="carousel__navigation-item">
+              <a href="#carousel__slide2" class="carousel__navigation-button">Go to slide 2</a>
+            </li>
+
+            <li class="carousel__navigation-item">
+              <a href="#carousel__slide3" class="carousel__navigation-button">Go to slide 3</a>
+            </li>
+
+            <li class="carousel__navigation-item">
+              <a href="#carousel__slide4" class="carousel__navigation-button">Go to slide 4</a>
+            </li>
+
+            <li class="carousel__navigation-item">
+              <a href="#carousel__slide5" class="carousel__navigation-button">Go to slide 5</a>
+            </li>
+
+            <li class="carousel__navigation-item">
+              <a href="#carousel__slide6" class="carousel__navigation-button">Go to slide 6</a>
+            </li>
+
+            <li class="carousel__navigation-item">
+              <a href="#carousel__slide7" class="carousel__navigation-button">Go to slide 7</a>
+            </li>
+
+            <li class="carousel__navigation-item">
+              <a href="#carousel__slide8" class="carousel__navigation-button">Go to slide 8</a>
+            </li>
+
+          </ol>
+
+        </aside>
+
+      </section>
 
     </div>
 
