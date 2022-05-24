@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <style>
+        #result-research{
+            text-align: center;
+        }
+    </style>
+    <title>Search Bar</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-0 col-md-2 col-lg-3"></div>
+            <div class="col-sm-12 col-md-8 col-lg-6">
+                <h1 style="text-align: center;">Search Bar</h1>
+                <div class="form-group" align="center">
+                    <input class="form-control input-normal" type="text" id="search-user"
+                        placeholder="Rechercher Spécialitées, Etablissements ou Médecins" size="20px" />
+                </div>
+
+                <div style="margin-top: 20px">
+                    <div id="result-research"></div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+
+        $(document).ready(function () {
+            $('#search-user').keyup(function () {
+                $('#result-research').html('');
+                var recherche = $(this).val();
+
+                console.log(recherche);
+
+                if (recherche != "") {
+                    $.ajax({
+                        type: 'GET',
+                        url: 'recherche.php',
+                        data: 'user=' + encodeURIComponent(recherche),
+                        success: function (data) {
+                            if (data != "") {
+                                $('#result-research').append(data);
+                            }
+                            else {
+                                document.getElementById('result-research').innerHTML = "<div style='font-size: 20px; text-align: center; margin-top: 10px;'>La recherche est nulle</div>"
+                            }
+                        }
+                    });
+                }
+            })
+        });
+    </script>
+
+</body>
+
+</html>
