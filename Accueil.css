@@ -382,6 +382,8 @@ input[type=submit]:hover {
     cursor: pointer;
 }
 
+/***************PPPIIIMMMPPPP*********************/
+
 .logo:hover{
     animation: vibration 0.4s;
     animation-iteration-count: infinite;
@@ -400,3 +402,10 @@ input[type=submit]:hover {
     90% { transform: translate(2px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
   }
+
+  p::selection{
+    color: azure;
+    background-color: dodgerblue;
+  }
+
+  
