@@ -1,7 +1,9 @@
 <?php
 include "connexionBDD.php";
 echo "page connexion médecin <br>";
-
+if($BDDTrouvee){
+	echo "BDD existe";
+}
 ?>
 
 <!doctype html>
@@ -16,5 +18,12 @@ echo "page connexion médecin <br>";
 		Courriel: <input type="email" name="courrielMedecin" /> <br />
 		<input type="submit" name="loginEspaceMedecin" value="Se connecter" />
 	</form>
+
+<?php
+$nom = isset($_POST['nomMedecin']) ? isset($_POST['nomMedecin']) : " "; 
+$prenom = isset($_POST['prenomMedecin']) ? isset($_POST['prenomMedecin']) : " "; 
+$courriel = isset($_POST['courrielMedecin']) ? isset($_POST['courrielMedecin']) : " "; 
+?>
+
 </body>
 </html>
