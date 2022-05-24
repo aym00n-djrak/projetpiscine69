@@ -1,49 +1,20 @@
-body {
-    padding: 0px;
-    margin: 0px;
-    background: #e7f8ff;
-}
-
-/*barre de navigation*/
-/*Couleur de fond*/
-.navbar {
-    background: #18c8e0;
-}
-
-/*Coueleur du texte*/
-.nav-link,
-.navbar-brand {
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-}
-
-/*Distance entre les boutons*/
-.nav-link {
-    margin-inline:2em;
-}
-
-/*Centrer les boutons*/
-.navbar-collapse {
-    justify-content:center;
-}
-
 /*Logo */
 .logo {
     width: 180px;
     border: solid;
-    margin: auto;  
-   
+    margin: auto;
+
 }
 
 /*Nom*/
 .nom {
     background-color: #fff;
-    color:#171c55;
-    margin: auto;  
+    color: #171c55;
+    margin: auto;
     margin-top: 10px;
     width: 250px;
     border: solid;
-  
+
 }
 
 /*en tete : image de fond*/
@@ -55,15 +26,56 @@ body {
     max-height: 400px;
 }
 
-footer {
-    height: 200px;
+/*barre de navigation*/
+/*Couleur de fond*/
+.navbar {
+    background: #18c8e0;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
-.barreDeRecherche{
-    margin-top: 5%;
-    margin-bottom: 5%;
-    margin-left: 15%;
-    position: relative;
+/*Coueleur du texte*/
+.nav-link,
+.navbar-brand {
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+/*Modifier couleur quand mouseover*/
+.navbar a:hover {
+    background: rgb(200, 226, 228);
+    color: black;
+}
+/*Set barre entre item*/
+li {
+    border-right: 1px solid #e7f8ff;
+}
+
+/*Barre dynamic, reste en haut quand scroll*/
+ul {
+    position: sticky;
+    top: 0;
+}
+
+/*Distance entre les boutons*/
+.nav-link {
+    margin-inline: 2em;
+}
+
+/*Centrer les boutons*/
+.navbar-collapse {
+    justify-content: center;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    background: #e7f8ff;
+}
+
+footer {
+    height: 200px;
 }
 
 /*Aeration/saut de ligne*/
@@ -80,4 +92,19 @@ footer {
     font-weight: 700;
     margin-bottom: 20px;
     text-transform: uppercase;
+}
+
+/*Image*/
+.feature-image {
+    
+    margin-bottom: 20px;
+    
+}
+
+/*Barre de Recherche*/
+.barreDeRecherche {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 15%;
+    position: relative;
 }
