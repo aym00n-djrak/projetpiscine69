@@ -75,6 +75,10 @@ ul {
     min-width: 300px;
 }
 
+.btnImg:hover {
+    border: solid;
+}
+
 body {
     padding: 0px;
     margin: 0px;
@@ -145,6 +149,8 @@ body {
     scrollbar-width: 0px;
     color: midnightblue;
     /*border: solid;*/
+    /*font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    */font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 *::-webkit-scrollbar {
