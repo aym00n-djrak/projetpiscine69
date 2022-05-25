@@ -57,7 +57,7 @@
             $medecin = array($classemed, $Docteur);
 
 
-            $heureAM = array("8:00", "8:20", "8:40", "9:00", "9:20", "9:40", "10:00", "10:20", "10:40", "11:00", "11:20", "11:40", "12:00");
+            $heureAM = array("08:00", "08:20", "08:40", "09:00", "09:20", "09:40", "10:00", "10:20", "10:40", "11:00", "11:20", "11:40", "12:00");
             $heurePM = array("14:00", "14:20", "14:40", "15:00", "16:20", "16:40", "17:00", "17:20", "18:40", "19:00", "19:20", "19:40", "20:00");
 
             echo "<tr><th>Spécialité</th>";
@@ -103,21 +103,11 @@
     <script type="text/javascript">
         function color() {
             var idtab = <?php echo '["' . implode('", "', $idtab) . '"]' ?>;
-
             var creneau = <?php echo '["' . implode('", "', $creneau) . '"]' ?>;
             var heure = <?php echo '["' . implode('", "', $heureres) . '"]' ?>;
             var creneauheure=<?php echo '["' . implode('", "', $heurecreneau) . '"]' ?>;
-            /*
-            var creneauheure = [];
-            console.log(heure);
-
-            for (var i = 0; i < creneau.length; i++) {
-                for (var j = 0; j < heure.length; j++)
-                creneauheure.push(creneau[i]+heure[j]);
-            }
-*/
-            console.log(creneauheure);
-
+            console.log(idtab);
+            console.log("Creneau Heure: "+creneauheure);
             for (var i = 0; i < creneauheure.length; i++) {
                 for (var j = 0; j < idtab.length; j++)
                     if (idtab[j] == creneauheure[i]) {

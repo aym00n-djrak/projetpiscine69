@@ -10,7 +10,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="Accueil.css">
   <script type="text/javascript">
-    $(document).ready(function () {
+    $(document).ready(function() {
       $('.header').height($(window).height());
     });
   </script>
@@ -36,38 +36,61 @@
       </ul>
     </div>
   </nav>
+
+  <?php
+  include "phprdvbdd/rdv.php"
+  ?>
+
   <div class="container features">
-    <p class="Titre-Section">Connexion</p>
-    <table>
-      <tr>
-        <!--Nom-->
-        <td>NomPrenom</td>
-        <td><input type="text" name="nomMed" label="Nom du medecin:"></td>
-      </tr>
-      <tr>
-        <!--Date-->
-        <td>Email :</td>
-        <td><input type="text" name="emailMed" label="Nom du medecin:"></td>
-      </tr>
-      <tr>
-        <!--Bouton de validation-->
-        <td colspan="2" align="center">
-          <input type="submit" name="Valider" value="Valider" text-align="center">
-        </td>
-      </tr>
-    </table>
+    <form class="formulaireAjoutMedecin" method="POST" action="phprdvbdd/deleterdv.php">
+      <p class="Titre-Section">Liste de vos rendez-vous :</p>
+      <table>
+        <tr>
+          <!--Nom-->
+          <td>Rendez-vous avec le docteur</td>
+          <td><?php echo $nomMedecin ?></td>
+        </tr>
+        <tr>
+          <!--Date-->
+          <td>Date :</td>
+          <td><?php echo $dateRdv ?></td>
+        </tr>
+        <tr>
+          <!--Heure-->
+          <td>Heure :</td>
+          <td><?php echo $heureRdv ?></td>
+        </tr>
+        <tr>
+          <!--Salle-->
+          <td>Salle :</td>
+          <td><?php echo $salleLabo ?></td>
+        </tr>
+        <tr>
+          <!--Autre info-->
+          <td>Autre info :</td>
+          <td><?php echo $courrielLabo ?></td>
+        </tr>
+        <tr>
+          <!--Bouton pour annuler le rdv-->
+          <td colspan="2" align="center">
+            <input type="submit" name="Annuler le RDV" value="Annuler le RDV" text-align="center">
+            </a>
+            <?php echo $message ?>
+          </td>
+        </tr>
+      </table>
+    </form>
   </div>
 
   <footer class="page-footer">
+
+
 
     <div class="row">
 
       <div class="col-lg-8 col-md-8 col-sm-20">
 
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7008.822583384912!2d2.2823564991389347!3d48.851686907281966!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6701b4f58251b%3A0x167f5a60fb94aa76!2sECE%20Paris%20Lyon!5e0!3m2!1sfr!2sfr!4v1653309618172!5m2!1sfr!2sfr"
-          width="100%" height="100%" style="border:0" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7008.822583384912!2d2.2823564991389347!3d48.851686907281966!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6701b4f58251b%3A0x167f5a60fb94aa76!2sECE%20Paris%20Lyon!5e0!3m2!1sfr!2sfr!4v1653309618172!5m2!1sfr!2sfr" width="100%" height="100%" style="border:0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
       </div>
 
