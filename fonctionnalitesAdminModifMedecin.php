@@ -51,31 +51,31 @@ if($BDDTrouvee){
 		<form method = "POST" class="formulaireModifMedecin">
 			<br />VEUILLEZ CHOISIR LE MEDECIN A MODIFIER: <select name="medecinAModifier">
 				<option>choisir...</option>
-				<option value=1>Nom1 Prénom1</option>
-				<option value=2>Nom2 Prénom2</option>
+				<option value=1>Nom1 Prenom1</option>
+				<option value=2>Nom2 Prenom2</option>
 			</select>
-			<br>Option alternative: saisir l'id du médecin à modifier: <input type="text" name="idModifTextField">
+			<br>Option alternative: saisir l'id du medecin e modifier: <input type="text" name="idModifTextField">
 			<br /><br />VEUILLEZ SAISIR LES INFORMATIONS A MODIFIER<br />
 			Nom: <input type="text" name="nomMedecin" /> <br />
 			Prenom: <input type="text" name="prenomMedecin" /> <br />
-			Spécialité: <select name="specialite">
+			Specialite: <select name="specialite">
 				<option value="">choisir...</option>
-				<option value="generaliste">Médecin généraliste</option>
+				<option value="generaliste">Medecin generaliste</option>
 				<option value="addictologie">Addictologie</option>
 				<option value="cardiologie">Cardiologie</option>
 				<option value="dermatologie">Dermatologie</option>
 				<option value="andrologie">Andrologie</option>
-				<option value="gastro-hepato-enterologie">Gastro-Hépato-Entérologie</option>
-				<option value="gynecologie">Gynécologie</option>
+				<option value="gastro-hepato-enterologie">Gastro-Hepato-Enterologie</option>
+				<option value="gynecologie">Gynecologie</option>
 				<option value="ist">IST</option>
-				<option value="osteopathie">Ostéopathie</option>
+				<option value="osteopathie">Osteopathie</option>
 			</select> <br />
 			Bureau: <input type="text" name="bureauMedecin" /> <br />
 			Courriel: <input type="email" name="courrielMedecin" /> <br />
-			Téléphone: <input type="number" name="telMedecin" /> <br />
-			Formation CV (50 caractères maximum): <br /> <textarea maxlength="50" name="formationsCVMedecin"></textarea> <br />
-			Expériences CV (50 caractères maximum): <br /> <textarea maxlength="50" name="experiencesCVMedecin"></textarea> <br />
-			<input type="submit" name="ordreModification" value="Modifier ce médecin" /> <br><br>
+			Telephone: <input type="number" name="telMedecin" /> <br />
+			Formation CV (50 caracteres maximum): <br /> <textarea maxlength="50" name="formationsCVMedecin"></textarea> <br />
+			Experiences CV (50 caracteres maximum): <br /> <textarea maxlength="50" name="experiencesCVMedecin"></textarea> <br />
+			<input type="submit" name="ordreModification" value="Modifier ce medecin" /> <br><br>
 		
 			<?php 	
 			if(isset($_POST['ordreModification'])){
@@ -91,7 +91,7 @@ if($BDDTrouvee){
 				$idAModifier = isset($_POST['idModifTextField']) ? $_POST['idModifTextField'] : 0;
 				$requete = "UPDATE `hopital`.`medecin` SET `nomMedecin` = '$nom', `prenomMedecin` = '$prenom', `specialiteMedecin` = '$specialite', `bureauMedecin` = '$bureau', `telMedecin` = '$tel', `courrielMedecin` = '$courriel', `formationCV` = '$formations', `experiencesCV` = '$experiences' WHERE `medecin`.`idMedecin` = $idAModifier;";
 				$commande = mysqli_query($loginBDD, $requete);
-				echo "<br>Modification médecin avec id $idAModifier OK<br><br>";
+				echo "<br>Modification medecin avec id $idAModifier OK<br><br>";
 			}
 			?>		
 		</form>

@@ -57,7 +57,7 @@ if($BDDTrouvee){
 
 	$requete = "INSERT INTO `hopital`.`medecin` (`idMedecin`, `nomMedecin`, `prenomMedecin`, `specialiteMedecin`, `bureauMedecin`, `telMedecin`, `courrielMedecin`, `formationCV`, `experiencesCV`, `idAdmin`) VALUES (NULL, '$nom', '$prenom', '$specialite', '$bureau', '$tel', '$courriel', '$formations', '$experiences', '$idAdminActuel');";
 	$commande = mysqli_query($loginBDD, $requete);
-	echo "Ajout médecin OK<br><br>";
+	echo "Ajout medecin OK<br><br>";
 
 	$requeteAffichage = "SELECT * FROM medecin";
 	$commandeAffichage = mysqli_query($loginBDD, $requeteAffichage);

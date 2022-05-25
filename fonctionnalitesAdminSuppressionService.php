@@ -69,8 +69,8 @@ if($BDDTrouvee){
 					}
 				</script>
 			</select>
-			<br>Option alternative: saisir l'id du service associé à un laboratoire que vous voulez supprimer: <input type="text" name="idSupTextField">
-				<input type="submit" name="ordreSuprression" value="Supprimer ce service associé" /><br>
+			<br>Option alternative: saisir l'id du service associe e un laboratoire que vous voulez supprimer: <input type="text" name="idSupTextField">
+				<input type="submit" name="ordreSuprression" value="Supprimer ce service associe" /><br>
 				
 				<?php 
 				//$idASupprimer = isset($_POST['serviceDUnlaboASupprimer']) ? $_POST['serviceDUnlaboASupprimer'] : 0;

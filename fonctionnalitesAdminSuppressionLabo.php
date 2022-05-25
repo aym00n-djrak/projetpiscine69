@@ -69,7 +69,7 @@ if($BDDTrouvee){
 					}
 				</script>
 			</select>
-			<br>Option alternative: saisir l'id du laboratoire à supprimer: <input type="text" name="idSupTextField">
+			<br>Option alternative: saisir l'id du laboratoire e supprimer: <input type="text" name="idSupTextField">
 				<input type="submit" name="ordreSuprression" value="Supprimer ce laboratoire" /><br>
 				
 				<?php 

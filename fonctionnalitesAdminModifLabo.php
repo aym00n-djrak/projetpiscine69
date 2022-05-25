@@ -52,12 +52,12 @@ if($BDDTrouvee){
 				<option value=1>Salle1 Tel1</option>
 				<option value=2>Salle2 Tel2</option>
 			</select>
-			<br>Option alternative: saisir l'id du laboratoire à modifier: <input type="text" name="idModifTextField">
+			<br>Option alternative: saisir l'id du laboratoire e modifier: <input type="text" name="idModifTextField">
 			<br /><br />VEUILLEZ SAISIR LES INFORMATIONS A MODIFIER<br />
 			<br />
 		Salle: <input type="text" name="salleLabo" /> <br />
 		Courriel: <input type="email" name="courrielLabo" /> <br />
-		Téléphone: <input type="number" name="telLabo" /> <br />
+		Telephone: <input type="number" name="telLabo" /> <br />
 		<input type="submit" name="ordreModifLabo" value="Modifier ce laboratoire" />
 		
 			<?php 	
@@ -68,7 +68,7 @@ if($BDDTrouvee){
 				$courriel = isset($_POST['courrielLabo']) ? $_POST['courrielLabo'] : " ";
 				$idAModifier = isset($_POST['idModifTextField']) ? $_POST['idModifTextField'] : 0;
 				$requete = "UPDATE `hopital`.`labo` SET `salleLabo` = '$salle', `telLabo` = '$tel', `courrielLabo` = '$courriel' WHERE `labo`.`idlabo` = $idAModifier;";
-				echo "requete formulée $requete";
+				echo "requete formulee $requete";
 				$commande = mysqli_query($loginBDD, $requete);
 				echo "<br>Modification laboratoire avec id $idAModifier OK<br><br>";
 			}

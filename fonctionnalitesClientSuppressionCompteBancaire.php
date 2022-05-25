@@ -70,8 +70,8 @@ if($BDDTrouvee){
 					}
 				</script>
 			</select>
-			<br>Option alternative: saisir l'id du médecin à supprimer: <input type="text" name="idSupTextField">
-				<input type="submit" name="ordreSuprression" value="Supprimer ce médecin" /><br>
+			<br>Option alternative: saisir l'id du medecin e supprimer: <input type="text" name="idSupTextField">
+				<input type="submit" name="ordreSuprression" value="Supprimer ce medecin" /><br>
 				
 				<?php 
 				//$idASupprimer = isset($_POST['medecinASupprimer']) ? $_POST['medecinASupprimer'] : 0;
@@ -79,7 +79,7 @@ if($BDDTrouvee){
 				$requete = "DELETE FROM `medecin` WHERE idmedecin=$idASupprimer";
 				if(isset($_POST['ordreSuprression'])){
 					$commande = mysqli_query($loginBDD, $requete);
-					echo "<br>Suppression médecin avec id $idASupprimer OK<br><br>";
+					echo "<br>Suppression medecin avec id $idASupprimer OK<br><br>";
 				}
 				?>
 		</form>

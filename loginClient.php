@@ -14,12 +14,12 @@ if($BDDTrouvee){
 	<form class="formulaireLoginClient" method="POST">
 		<br /><b>VEUILLEZ VOUS IDENTIFIER A L'ESPACE CLIENT</b><br />
 		Nom: <input type="text" name="nomClient" /> <br />
-		Prénom: <input type="text" name="prenomClient" /> <br />
+		Prenom: <input type="text" name="prenomClient" /> <br />
 		Mot de passe: <input type="password" name="mdpClient" /> <br />
 		Code postal: <input type="number" name="codePostalClient" /> <br />
 		Courriel: <input type="email" name="courrielClient" /> <br />
-		N° carte Vitale: <input type="number" name="numCarteVitaleClient" /> <br />
-		N° carte bancaire: <input type="password" name="numCarteBancaireClient" /> <br />
+		Ne carte Vitale: <input type="number" name="numCarteVitaleClient" /> <br />
+		Ne carte bancaire: <input type="password" name="numCarteBancaireClient" /> <br />
 		<input type="submit" name="loginEspaceClient" value="Se connecter" />
 
 <?php
@@ -35,8 +35,8 @@ if(isset($_POST['loginEspaceClient'])){
 	$requete = "SELECT * FROM `client` WHERE (`nomClient` = '$nom' AND `prenomClient` = '$prenom' AND `courrielClient` = '$courriel' AND `motDePasseClient` = '$mdp' AND `codePostalClient` = '$codePostal' AND `carteVitaleClient` = '$numCarteVitale');";
 	$commande = mysqli_query($loginBDD, $requete);
 	$resultat = "on sait pas encore"; $donnee = mysqli_fetch_assoc($commande);
-	if($donnee['idClient']!=null){$resultat="Connexion réussie";} else{$resultat="Aucun client trouvé";}
-	echo "<br>requete formulée $requete";
+	if($donnee['idClient']!=null){$resultat="Connexion reussie";} else{$resultat="Aucun client trouve";}
+	echo "<br>requete formulee $requete";
 	echo "<br>Resultat identification: $resultat<br><br>";
 }
 ?>

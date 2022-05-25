@@ -73,8 +73,8 @@ if($BDDTrouvee){
                         <td><input type="password" name="mdpClient" /></td>
                     </tr>
                     <tr>
-                        <!--Numéro carte bancaire-->
-                        <td>N° carte bancaire </td>
+                        <!--Numero carte bancaire-->
+                        <td>Ne carte bancaire </td>
                         <td><input type="password" name="numCarteBancaireClient" /></td>
                     </tr>
                     <tr>
@@ -107,7 +107,7 @@ if(isset($_POST['Connexion'])){
 	$requete = "SELECT * FROM `client` WHERE (`nomClient` = '$nom' AND `prenomClient` = '$prenom' AND `courrielClient` = '$courriel' AND `motDePasseClient` = '$mdp' AND `codePostalClient` = '$codePostal' AND `carteVitaleClient` = '$numCarteVitale');";
 	$commande = mysqli_query($loginBDD, $requete);
 	$resultat = "on sait pas encore"; $donnee = mysqli_fetch_assoc($commande);
-	if($donnee['idClient']!=null){$resultat="Connexion réussie"; sleep(1); echo "<script> window.location = 'http://localhost/projetpiscine69/fonctionnalitesClient.html' </script>";} else{$resultat="Aucun client trouvé";}
+	if($donnee['idClient']!=null){$resultat="Connexion reussie"; sleep(1); echo "<script> window.location = 'http://localhost/projetpiscine69/fonctionnalitesClient.html' </script>";} else{$resultat="Aucun client trouve";}
 	echo "<br>Resultat identification: $resultat<br><br>";
 }
 ?>
