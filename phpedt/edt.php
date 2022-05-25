@@ -32,47 +32,21 @@
         }
     </style>
 
-    <script type="text/javascript">
-        function color(clicked_id) {
-            var valeur = document.getElementById(clicked_id).value;
-            /* var bddvalue = '<?php echo $date; ?>'
-             if (valeur == bddvalue) {
-                 document.getElementById(clicked_id).style.background = "white";
-                 alert("L'heure choisie ne peut pas etre prise en RDV !");
-             }
-             else
-             {
-                 document.getElementById(clicked_id).style.background = "blue";
-             }
-             */
-            document.getElementById(clicked_id).style.background = "blue";
-
-        }
-    </script>
-
-
 </head>
 
-<body>
+<body onload="color()">
     <table>
 
         <div id="edt">
             <?php
-            date_default_timezone_set('Europe/Paris');
+            include "loaddate.php";
 
-            $today = new datetime();
-            $today0 = $today->format('Y-m-d');
-            $today1 = $today->modify('+1 days')->format('Y-m-d');
-            $today2 = $today->modify('+1 days')->format('Y-m-d');
-            $today3 = $today->modify('+1 days')->format('Y-m-d');
-            $today4 = $today->modify('+1 days')->format('Y-m-d');
-            $today5 = $today->modify('+1 days')->format('Y-m-d');
-            $today6 = $today->modify('+1 days')->format('Y-m-d');
+            //tout les creneaux réservé
+            $creneau;
+            $heureres;
 
+            $idtab = array();
 
-
-            //$jour = array("Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche");
-            $jour = array("$today0", "$today1", "$today2","$today3","$today4","$today5","$today6");
             $matin_soir = array("AM", "PM");
 
             for ($i = 0; $i < count($jour); $i++)
@@ -109,9 +83,9 @@
             for ($i = 0; $i < count($heureAM); $i++) {
                 echo "<tr>";
                 for ($j = 0; $j < count($jour); $j++) {
-
-                    echo "<td><input type=\"button\" id=\"heureAM" . $i . $j . "\" onClick=\"color(this.id)\" value=" . $heureAM[$i] . "></td>";
-                    echo "<td><input type=\"button\" id=\"heurePM" . $i . $j . "\" onClick=\"color(this.id)\" value=" . $heurePM[$i] . "></td>";
+                    array_push($idtab, $jour[$j] . $heureAM[$i] . ":00", $jour[$j] . $heurePM[$i] . ":00");
+                    echo "<td><input type=\"button\" id=" . $jour[$j] . $heureAM[$i] . ":00 onClick=\"color(this.id)\" value=" . $heureAM[$i] . "></td>";
+                    echo "<td><input type=\"button\" id=" . $jour[$j] . $heurePM[$i] . ":00 onClick=\"color(this.id)\" value=" . $heurePM[$i] . "></td>";
                 }
                 echo "</tr>";
             }
@@ -125,4 +99,29 @@
     <a href="http://localhost/projetpiscine69//MedecinGeneraliste.html">
         <input type="button" value="exit" />
     </a>
+
+    <script type="text/javascript">
+        function color() {
+            var idtab = <?php echo '["' . implode('", "', $idtab) . '"]' ?>;
+
+            var creneau = <?php echo '["' . implode('", "', $creneau) . '"]' ?>;
+            var heure = <?php echo '["' . implode('", "', $heureres) . '"]' ?>;
+
+            var creneauheure = [];
+
+            for (var i = 0; i < creneau.length; i++) {
+                for (var j = 0; j < heure.length; j++)
+                creneauheure.push(creneau[i]+heure[j]);
+            }
+
+            console.log(creneauheure);
+
+            for (var i = 0; i < creneauheure.length; i++) {
+                for (var j = 0; j < idtab.length; j++)
+                    if (idtab[j] == creneauheure[i]) {
+                        document.getElementById(idtab[j]).style.background = "blue";
+                    }
+            }
+        }
+    </script>
 </body>
