@@ -36,43 +36,25 @@
             </ul>
         </div>
     </nav>
-    <form action="http://localhost/projetpiscine69/fonctionnalitesAdmin.html" name="boutonRetourForm"><input type="submit" class="boutonRetour" value="Retour" /> <br /> </form>
+    <form action="http://localhost/projetpiscine69/fonctionnalitesClient.html" name="boutonRetourForm"><input type="submit" class="boutonRetour" value="Retour" /> <br /> </form>
     <form method = "POST">
     <?php 
 include "connexionBDD.php";
-echo "page ajout medecin <br>";
+echo "page ajout compte bancaire <br>";
 
-$idAdminActuel = 1;
+$idClientActuel = 1;
 
-$nom = isset($_POST['nomMedecin']) ? $_POST['nomMedecin'] : "0";
-$prenom = isset($_POST['prenomMedecin']) ? $_POST['prenomMedecin'] : "0";
-$specialite = isset($_POST['specialite']) ? $_POST['specialite'] : "0";
-$bureau = isset($_POST['bureauMedecin']) ? $_POST['bureauMedecin'] : "0";
-$tel = isset($_POST['telMedecin']) ? $_POST['telMedecin'] : "0";
-$courriel = isset($_POST['courrielMedecin']) ? $_POST['courrielMedecin'] : "0";
-$formations = isset($_POST['formationsCVMedecin']) ? $_POST['formationsCVMedecin'] : "0";
-$experiences = isset($_POST['experiencesCVMedecin']) ? $_POST['experiencesCVMedecin'] : "0";
+$nomCarte = isset($_POST['nomCarte']) ? $_POST['nomCarte'] : "0";
+$numeroCarte = isset($_POST['numCarte']) ? $_POST['numCarte'] : "0";
+$typeCarte = isset($_POST['typeCarte']) ? $_POST['typeCarte'] : "0";
+$dateExpiration = isset($_POST['dateExpirationCarte']) ? $_POST['dateExpirationCarte'] : "0";
+$codeSecuCarte = isset($_POST['codeSecuriteCarte']) ? $_POST['codeSecuriteCarte'] : "0";
 if($BDDTrouvee){
 	echo "BDD existe<br>";
 
-	$requete = "INSERT INTO `hopital`.`medecin` (`idMedecin`, `nomMedecin`, `prenomMedecin`, `specialiteMedecin`, `bureauMedecin`, `telMedecin`, `courrielMedecin`, `formationCV`, `experiencesCV`, `idAdmin`) VALUES (NULL, '$nom', '$prenom', '$specialite', '$bureau', '$tel', '$courriel', '$formations', '$experiences', '$idAdminActuel');";
+	$requete = "INSERT INTO `hopital`.`comptebancaire` (`idCompte`, `typeCarteCompte`, `numCarteCompte`, `nomCarteCompte`, `dateExpirationCarteCompte`, `codeSecuriteCarteCompte`, `idClient`) VALUES (NULL, '$typeCarte', '$numeroCarte', '$nomCarte', '$dateExpiration', '$codeSecuCarte', '$idClientActuel');";
 	$commande = mysqli_query($loginBDD, $requete);
-	echo "Ajout medecin OK<br><br>";
-
-	$requeteAffichage = "SELECT * FROM medecin";
-	$commandeAffichage = mysqli_query($loginBDD, $requeteAffichage);
-	while($donnee = mysqli_fetch_assoc($commandeAffichage)){
-	echo "idMedecin: " . $donnee['idMedecin'] . '<br>';
-	echo "nomMedecin: " . $donnee['nomMedecin'] . '<br>';
-	echo "prenomMedecin: " . $donnee['prenomMedecin'] . '<br>';
-	echo "specialiteMedecin: " . $donnee['specialiteMedecin'] . '<br>';
-	echo "bureauMedecin: " . $donnee['bureauMedecin'] . '<br>';
-	echo "telMedecin: " . $donnee['telMedecin'] . '<br>';
-	echo "courrielMedecin: " . $donnee['courrielMedecin'] . '<br>';
-	echo "formationCV: " . $donnee['formationCV'] . '<br>';
-	echo "experiencesCV: " . $donnee['experiencesCV'] . '<br>';
-	echo "idAdmin: " . $donnee['idAdmin'] . '<br>' . '<br>';
-	}
+	echo "Ajout compte bancaire pour client avec id $idClientActuel OK<br><br>";
 }
 ?>
 </form>

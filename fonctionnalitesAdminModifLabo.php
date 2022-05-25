@@ -68,7 +68,6 @@ if($BDDTrouvee){
 				$courriel = isset($_POST['courrielLabo']) ? $_POST['courrielLabo'] : " ";
 				$idAModifier = isset($_POST['idModifTextField']) ? $_POST['idModifTextField'] : 0;
 				$requete = "UPDATE `hopital`.`labo` SET `salleLabo` = '$salle', `telLabo` = '$tel', `courrielLabo` = '$courriel' WHERE `labo`.`idlabo` = $idAModifier;";
-				echo "requete formulee $requete";
 				$commande = mysqli_query($loginBDD, $requete);
 				echo "<br>Modification laboratoire avec id $idAModifier OK<br><br>";
 			}

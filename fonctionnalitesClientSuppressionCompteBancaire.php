@@ -1,21 +1,20 @@
 <?php 
 include "connexionBDD.php";
-echo "page suppression medecin <br>";
+echo "page suppression compte bancaire <br>";
 if($BDDTrouvee){
 	echo "BDD existe";
-
-	$liste_id_medecins = array();
-	$requeteAffichage = "SELECT * FROM medecin";
+    $idclient = 1;
+	$liste_id_comptes = array();
+	$requeteAffichage = "SELECT * FROM comptebancaire where comptebancaire.idclient = $idclient;";
 	$commandeAffichage = mysqli_query($loginBDD, $requeteAffichage);
 	while($donnee = mysqli_fetch_assoc($commandeAffichage)){
-		echo "idMedecin: " . $donnee['idMedecin'] . '<br>';
-		array_push($liste_id_medecins, $donnee['idMedecin']);
+		echo "id compte pour le client $idclient:"  . $donnee['idCompte'] . '<br>';
+		array_push($liste_id_comptes, $donnee['idCompte']);
 	}
-	print_r($liste_id_medecins);
-	$taileListeIdMedecins = count($liste_id_medecins);
+	print_r($liste_id_comptes);
+	$taileListeIdcomptes = count($liste_id_comptes);
 }
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -55,34 +54,35 @@ if($BDDTrouvee){
             </ul>
         </div>
     </nav>
-		<h1>Bienvenue dans votre espace administrateur</h1>
 
-    <form action="http://localhost/projetpiscine69/fonctionnalitesAdmin.html" name="boutonRetourForm"><input type="submit" class="boutonRetour" value="Retour" /> <br /> </form>
-		<form method = "POST" class="formulaireModifMedecin">
-        		<br /> VEUILLEZ CHOISIR LE MEDECIN A SUPPRIMER: <select class="medecinASupprimer">
+ <form action="http://localhost/projetpiscine69/fonctionnalitesClient.html" name="boutonRetourForm"><input type="submit" class="boutonRetour" value="Retour" /> <br /> </form>
+    <form method = "POST">
+
+    		<br /> VEUILLEZ CHOISIR L'ID DE VOTRE COMPTE A SUPPRIMER: <select class="compteASupprimer">
 			<option>choisir...</option>
 				<script>
 					<?php $count = 0;?>
-					let taille = <?php echo $taileListeIdMedecins;?>;
+					let taille = <?php echo $taileListeIdcomptes;?>;
 					for(let parcours = 0; parcours<taille; ++parcours){
-						$(".medecinASupprimer").append("<option value= <?php echo $liste_id_medecins[$count];?>>Id <?php echo $liste_id_medecins[$count];?></option>");
+						$(".compteASupprimer").append("<option value= <?php echo $liste_id_comptes[$count];?>>Id <?php echo $liste_id_comptes[$count];?></option>");
 						<?php $count++;?>
 					}
 				</script>
 			</select>
-			<br>Option alternative: saisir l'id du medecin e supprimer: <input type="text" name="idSupTextField">
-				<input type="submit" name="ordreSuprression" value="Supprimer ce medecin" /><br>
+			<br>Option alternative: saisir l'id de votre compte à supprimer: <input type="text" name="idSupTextField">
+				<input type="submit" name="ordreSuprression" value="Supprimer ce laboratoire" /><br>
 				
 				<?php 
-				//$idASupprimer = isset($_POST['medecinASupprimer']) ? $_POST['medecinASupprimer'] : 0;
+				//$idASupprimer = isset($_POST['compteASupprimer']) ? $_POST['compteASupprimer'] : 0;
 				$idASupprimer = isset($_POST['idSupTextField']) ? $_POST['idSupTextField'] : 0;
-				$requete = "DELETE FROM `medecin` WHERE idmedecin=$idASupprimer";
+				$requete = "DELETE FROM `comptebancaire` WHERE idcompte=$idASupprimer";
 				if(isset($_POST['ordreSuprression'])){
 					$commande = mysqli_query($loginBDD, $requete);
-					echo "<br>Suppression medecin avec id $idASupprimer OK<br><br>";
+					echo "<br>Suppression compte avec id $idASupprimer du client $idclient OK<br><br>";
 				}
 				?>
-		</form>
+    </form>
+
     <footer class="page-footer">
 
         <div class="row">

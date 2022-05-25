@@ -42,10 +42,9 @@
 
 	<form name="boutonAjout"> <input type="button" class="boutonAjoutCompte" value="Ajouter un compte bancaire" onclick="affichageFormulaireAjoutCompte()" /> </form>
 	<form action="http://localhost/projetpiscine69/fonctionnalitesClientSuppressionCompteBancaire.php" name="boutonSupprimerForm"> <input type="submit" class="boutonSupprimerCompte" value="Supprimer un compte bancaire" /> </form>
-	<form action="http://localhost/projetpiscine69/fonctionnalitesClientModifCompteBancaire.php" name="boutonModifForm"><input type="submit" class="boutonModifierCompteBancaire" value="Modifier un compte bancaire" /> <br /> </form>
 	<br />
 
-	<for class="formulaireAjoutCompte" method="POST" action="http://localhost/projetpiscine69/fonctionnalitesClientAjoutCarteBancaire.php">
+	<form class="formulaireAjoutCompte" method="POST" action="http://localhost/projetpiscine69/fonctionnalitesClientAjoutCompteBancaire.php">
 		<br />VEUILLEZ SAISIR LES INFORMATIONS DU NOUVEAU COMPTE<br />
 		Nom carte bancaire: <input type="text" name="nomCarte" /> <br />
 		Numero carte bancaire: <input type="number" name="numCarte" /> <br />
@@ -59,7 +58,7 @@
 		Date d'expiration: <input type="date" name="dateExpirationCarte" /> <br />
 		Code de securite: <input type="password" name="codeSecuriteCarte" /> <br />
 		<input type="submit" name="ordreAjoutCarte" value="Ajouter ce compte" />
-	
+	</form>
 
 
 	<footer class="page-footer">
