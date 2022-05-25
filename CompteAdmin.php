@@ -81,7 +81,8 @@ if(isset($_POST['loginEspaceAdmin'])){
 	$requete = "SELECT * FROM `admin` where (nomadmin = '$nom' and prenomadmin = '$prenom' and courrieladmin = '$courriel');";
 	$commande = mysqli_query($loginBDD, $requete);
 	$resultat = "on sait pas encore"; $donnee = mysqli_fetch_assoc($commande);
-	if($donnee['idAdmin']!=null){$resultat="Connexion réussie";} else{$resultat="Aucun admin trouvé";}
+	if($donnee['idAdmin']!=null){$resultat="Connexion réussie"; sleep(1); echo "<script> window.location = 'http://localhost/projetpiscine69/fonctionnalitesAdmin.html' </script>";}
+    else{$resultat="Aucun admin trouvé";}
 	echo "<br>Resultat identification: $resultat<br><br>";
 }
 ?>
