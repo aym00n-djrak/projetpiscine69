@@ -211,19 +211,69 @@ li {
 }
 
 .imgCarrou1{
-    background-image: url('https://media.istockphoto.com/vectors/young-character-of-woman-or-girl-locked-inside-a-cage-inequality-and-vector-id1302841615?k=20&m=1302841615&s=612x612&w=0&h=oq5Udo_P3yIepa7K6icb5AvBGY4W0iLYafleU1xtPUM=');
+    background-image: url('https://media.istockphoto.com/vectors/family-suffering-from-social-media-addiction-vector-id1209904398?k=20&m=1209904398&s=612x612&w=0&h=QP8gTYXr2_Bol1JsCJaOrBWGkuwYfcwZTgk1wVhI-fY=');
     block-size: 100%;
     display: flex;
     margin: auto;
 }
 
-.txtCarrou1{
+.imgCarrou2{
+    background-image: url('https://media.istockphoto.com/vectors/urologist-examines-male-genitourinary-system-diagnosis-of-prostatitis-vector-id1386040971?k=20&m=1386040971&s=612x612&w=0&h=7DvMjL2JaAsULlOcaJ6W8kZZuCBW7giTih_3a7l5GHU=');
+    block-size: 100%;
+    display: flex;
+    margin: auto;
+}
+
+.imgCarrou3{
+    background-image: url('https://media.istockphoto.com/vectors/high-blood-pressure-hypertension-disease-tiny-doctors-treat-check-vector-id1218942609?k=20&m=1218942609&s=612x612&w=0&h=kgB0mM8wFvl2YUmQXIA2DPQlXDFCJPTfs2cjw6XICak=');
+    block-size: 100%;
+    display: flex;
+    margin: auto;
+}
+
+.imgCarrou4{
+    background-image: url('https://media.istockphoto.com/vectors/dermatology-and-skin-health-care-concept-vector-flat-modern-doctor-vector-id1304919796?k=20&m=1304919796&s=612x612&w=0&h=Qp8bPxPspSilMqF5KCss99fPOkQyANj10o12-7T1pew=');
+    block-size: 100%;
+    display: flex;
+    margin: auto;
+}
+
+.imgCarrou5{
+    background-image: url('https://media.istockphoto.com/vectors/bowel-disease-searching-health-care-medicine-concept-vector-flat-vector-id1185243231?k=20&m=1185243231&s=612x612&w=0&h=gsoBh3SijuJb0UynAzrQgrNBKZtdWXKQqZwpuuGszzU=');
+    block-size: 100%;
+    display: flex;
+    margin: auto;
+}
+
+.imgCarrou6{
+    background-image: url('https://media.istockphoto.com/vectors/gynecology-and-women-health-consultation-with-a-gynecologist-or-vector-id1195893421?k=20&m=1195893421&s=612x612&w=0&h=8mvE_ev36Rw7P6b7oBoWY7rZQDy_CW23IrbtCp3F22w=');
+    block-size: 100%;
+    display: flex;
+    margin: auto;
+}
+
+.imgCarrou7{
+    background-image: url('https://media.istockphoto.com/vectors/sexually-transmitted-diseases-concept-vector-illustration-vector-id1133864280?k=20&m=1133864280&s=612x612&w=0&h=S3djcG2EpAnv3un8qQ2bqqyqgO0eMgu34kQ004Z2TH4=');
+    block-size: 100%;
+    display: flex;
+    margin: auto;
+}
+
+.imgCarrou8{
+    background-image: url('https://media.istockphoto.com/vectors/professional-tiny-doctors-examining-spine-bones-vector-id1296488484?k=20&m=1296488484&s=612x612&w=0&h=8l7XoFnBnx9BxhZf-O1BxVp-1_Ou5RT45TGPlx9sQK0=');
+    block-size: 100%;
+    display: flex;
+    margin: auto;
+}
+
+.txtCarrou{
     background-color: azure;
     text-transform: uppercase;
     border-radius: 25px;
     border: solid;
     display: flex;
     margin: auto;
+    text-align: center;
 }
 
 /*Slide 1*/
