@@ -6,22 +6,6 @@ if($BDDTrouvee){
 }
 ?>
 
-<!doctype html>
-<html>
-<head>
-</head>
-<body>
-	<form class="formulaireLoginClient" method="POST">
-		<br /><b>VEUILLEZ VOUS IDENTIFIER A L'ESPACE CLIENT</b><br />
-		Nom: <input type="text" name="nomClient" /> <br />
-		Prenom: <input type="text" name="prenomClient" /> <br />
-		Mot de passe: <input type="password" name="mdpClient" /> <br />
-		Code postal: <input type="number" name="codePostalClient" /> <br />
-		Courriel: <input type="email" name="courrielClient" /> <br />
-		Ne carte Vitale: <input type="number" name="numCarteVitaleClient" /> <br />
-		Ne carte bancaire: <input type="password" name="numCarteBancaireClient" /> <br />
-		<input type="submit" name="loginEspaceClient" value="Se connecter" />
-
 <?php
 if(isset($_POST['loginEspaceClient'])){
 	$nom = isset($_POST['nomClient']) ? $_POST['nomClient'] : " "; 
@@ -39,8 +23,3 @@ if(isset($_POST['loginEspaceClient'])){
 	echo "<br>requete formulee $requete";
 	echo "<br>Resultat identification: $resultat<br><br>";
 }
-?>
-
-	</form>
-</body>
-</html>

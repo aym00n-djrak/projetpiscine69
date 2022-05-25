@@ -1,18 +1,18 @@
-<?php 
+<?php
 include "connexionBDD.php";
 echo "page suppression medecin <br>";
-if($BDDTrouvee){
-	echo "BDD existe";
+if ($BDDTrouvee) {
+    echo "BDD existe";
 
-	$liste_id_medecins = array();
-	$requeteAffichage = "SELECT * FROM medecin";
-	$commandeAffichage = mysqli_query($loginBDD, $requeteAffichage);
-	while($donnee = mysqli_fetch_assoc($commandeAffichage)){
-		echo "idMedecin: " . $donnee['idMedecin'] . '<br>';
-		array_push($liste_id_medecins, $donnee['idMedecin']);
-	}
-	print_r($liste_id_medecins);
-	$taileListeIdMedecins = count($liste_id_medecins);
+    $liste_id_medecins = array();
+    $requeteAffichage = "SELECT * FROM medecin";
+    $commandeAffichage = mysqli_query($loginBDD, $requeteAffichage);
+    while ($donnee = mysqli_fetch_assoc($commandeAffichage)) {
+        echo "idMedecin: " . $donnee['idMedecin'] . '<br>';
+        array_push($liste_id_medecins, $donnee['idMedecin']);
+    }
+    print_r($liste_id_medecins);
+    $taileListeIdMedecins = count($liste_id_medecins);
 }
 ?>
 
@@ -29,7 +29,7 @@ if($BDDTrouvee){
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="Accueil.css">
     <script type="text/javascript">
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('.header').height($(window).height());
         });
     </script>
@@ -55,43 +55,67 @@ if($BDDTrouvee){
             </ul>
         </div>
     </nav>
-		<h1>Bienvenue dans votre espace administrateur</h1>
 
-    <form action="http://localhost/projetpiscine69/fonctionnalitesAdmin.html" name="boutonRetourForm"><input type="submit" class="boutonRetour" value="Retour" /> <br /> </form>
-		<form method = "POST" class="formulaireModifMedecin">
-        		<br /> VEUILLEZ CHOISIR LE MEDECIN A SUPPRIMER: <select class="medecinASupprimer">
-			<option>choisir...</option>
-				<script>
-					<?php $count = 0;?>
-					let taille = <?php echo $taileListeIdMedecins;?>;
-					for(let parcours = 0; parcours<taille; ++parcours){
-						$(".medecinASupprimer").append("<option value= <?php echo $liste_id_medecins[$count];?>>Id <?php echo $liste_id_medecins[$count];?></option>");
-						<?php $count++;?>
-					}
-				</script>
-			</select>
-			<br>Option alternative: saisir l'id du medecin e supprimer: <input type="text" name="idSupTextField">
-				<input type="submit" name="ordreSuprression" value="Supprimer ce medecin" /><br>
-				
-				<?php 
-				//$idASupprimer = isset($_POST['medecinASupprimer']) ? $_POST['medecinASupprimer'] : 0;
-				$idASupprimer = isset($_POST['idSupTextField']) ? $_POST['idSupTextField'] : 0;
-				$requete = "DELETE FROM `medecin` WHERE idmedecin=$idASupprimer";
-				if(isset($_POST['ordreSuprression'])){
-					$commande = mysqli_query($loginBDD, $requete);
-					echo "<br>Suppression medecin avec id $idASupprimer OK<br><br>";
-				}
-				?>
-		</form>
+    <div class="container features">
+
+        <p class="Titre-Section">Bienvenue dans votre espace administrateur</p>
+
+        <form action="http://localhost/projetpiscine69/fonctionnalitesAdmin.html" name="boutonRetourForm"><input type="submit" class="boutonRetour" value="Retour" /> <br /> </form>
+        <form method="POST" class="formulaireModifMedecin">
+
+            <table>
+                <tr>
+                    <td>
+                        VEUILLEZ CHOISIR LE MEDECIN A SUPPRIMER:
+                    </td>
+                    <td>
+                        <select class="medecinASupprimer">
+                            <option>choisir...</option>
+                            <script>
+                                <?php $count = 0; ?>
+                                let taille = <?php echo $taileListeIdMedecins; ?>;
+                                for (let parcours = 0; parcours < taille; ++parcours) {
+                                    $(".medecinASupprimer").append("<option value= <?php echo $liste_id_medecins[$count]; ?>>Id <?php echo $liste_id_medecins[$count]; ?></option>");
+                                    <?php $count++; ?>
+                                }
+                            </script>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Option alternative: saisir l'id du medecin e supprimer:
+                    </td>
+                    <td>
+                        <input type="text" name="idSupTextField">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" name="ordreSuprression" value="Supprimer ce medecin" />
+                    </td>
+                </tr>
+            </table>
+
+            <?php
+            //$idASupprimer = isset($_POST['medecinASupprimer']) ? $_POST['medecinASupprimer'] : 0;
+            $idASupprimer = isset($_POST['idSupTextField']) ? $_POST['idSupTextField'] : 0;
+            $requete = "DELETE FROM `medecin` WHERE idmedecin=$idASupprimer";
+            if (isset($_POST['ordreSuprression'])) {
+                $commande = mysqli_query($loginBDD, $requete);
+                echo "<br>Suppression medecin avec id $idASupprimer OK<br><br>";
+            }
+            ?>
+        </form>
+    </div>
+
     <footer class="page-footer">
 
         <div class="row">
 
             <div class="col-lg-8 col-md-8 col-sm-20">
 
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7008.822583384912!2d2.2823564991389347!3d48.851686907281966!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6701b4f58251b%3A0x167f5a60fb94aa76!2sECE%20Paris%20Lyon!5e0!3m2!1sfr!2sfr!4v1653309618172!5m2!1sfr!2sfr"
-                        width="100%" height="100%" style="border:0" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7008.822583384912!2d2.2823564991389347!3d48.851686907281966!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6701b4f58251b%3A0x167f5a60fb94aa76!2sECE%20Paris%20Lyon!5e0!3m2!1sfr!2sfr!4v1653309618172!5m2!1sfr!2sfr" width="100%" height="100%" style="border:0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
             </div>
 

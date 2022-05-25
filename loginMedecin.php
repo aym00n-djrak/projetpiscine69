@@ -6,17 +6,6 @@ if($BDDTrouvee){
 }
 ?>
 
-<!doctype html>
-<html>
-<head>
-</head>
-<body>
-	<form class="formulaireLoginMedecin" method="POST">
-		<br /><b>VEUILLEZ VOUS IDENTIFIER A L'ESPACE MEDECIN</b><br />
-		Nom: <input type="text" name="nomMedecin" /> <br />
-		Prenom: <input type="text" name="prenomMedecin" /> <br />
-		Courriel: <input type="email" name="courrielMedecin" /> <br />
-		<input type="submit" name="loginEspaceMedecin" value="Se connecter" />
 <?php
 if(isset($_POST['loginEspaceMedecin'])){
 	$nom = isset($_POST['nomMedecin']) ? $_POST['nomMedecin'] : " "; 
@@ -31,7 +20,3 @@ if(isset($_POST['loginEspaceMedecin'])){
 	echo "<br>Resultat identification: $resultat<br><br>";
 	}
 ?>
-
-	</form>
-</body>
-</html>

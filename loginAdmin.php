@@ -6,18 +6,6 @@ if($BDDTrouvee){
 }
 ?>
 
-<!doctype html>
-<html>
-<head>
-</head>
-<body>
-	<form class="formulaireLoginAdmin" method="POST">
-		<br /><b>VEUILLEZ VOUS IDENTIFIER A L'ESPACE ADMINISTRATEUR</b><br />
-		Nom: <input type="text" name="nomAdmin" /> <br />
-		Prenom: <input type="text" name="prenomAdmin" /> <br />
-		Courriel: <input type="email" name="courrielAdmin" /> <br />
-		<input type="submit" name="loginEspaceAdmin" value="Se connecter" />
-
 <?php
 if(isset($_POST['loginEspaceAdmin'])){
 	$nom = isset($_POST['nomAdmin']) ? $_POST['nomAdmin'] : " "; 
@@ -31,8 +19,3 @@ if(isset($_POST['loginEspaceAdmin'])){
 	echo "<br>requete formulee $requete";
 	echo "<br>Resultat identification: $resultat<br><br>";
 }
-?>
-
-	</form>
-</body>
-</html>
