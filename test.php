@@ -7,3 +7,7 @@
 je teste tous les accents: Accélération, Répète s'il te plaît
 </body<
 </html>
+
+<?php
+$variable = "Accélération, Répète s'il te plaît";
+?>
