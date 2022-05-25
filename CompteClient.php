@@ -88,10 +88,9 @@ if($BDDTrouvee){
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <!--Bouton d'inscription-->
                 <h4>Vous n'etes pas membres ?<br>Inscrivez-vous ici :<br></h4>
-                <a href="CompteClientInscription.html">
-                    <input type="submit" name="Inscription" value="Inscription" text-align="center">
-                </a>
+                <a href= "http://localhost/projetpiscine69/inscriptionClient.php"><input type="button" value="Inscription"></a>
             </div>
+
         </div>
     </div>
     <?php
