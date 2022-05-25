@@ -17,6 +17,8 @@ $jour = array("$today0", "$today1", "$today2","$today3","$today4","$today5","$to
 $creneau=array();
 $heureres=array();
 
+$heurecreneau=array();
+
 
 for($i=0;$i<COUNT($jour);$i++)
 {
@@ -30,6 +32,9 @@ while($donnee= mysqli_fetch_assoc($executequery)){
 
      $heurebdd=$donnee['heureCreneau'];
      array_push($heureres,$heurebdd);
+
+     array_push($heurecreneau,  $datebdd.$heurebdd);
+
     }
 }
 
@@ -38,5 +43,6 @@ echo $creneau[$i]."<br>";
 for($i=0;$i<COUNT($heureres);$i++)
 echo $heureres[$i]."<br>";
 
-
+for($i=0;$i<COUNT($heurecreneau);$i++)
+echo $heurecreneau[$i]."<br>";
 ?>

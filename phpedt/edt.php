@@ -106,14 +106,16 @@
 
             var creneau = <?php echo '["' . implode('", "', $creneau) . '"]' ?>;
             var heure = <?php echo '["' . implode('", "', $heureres) . '"]' ?>;
-
+            var creneauheure=<?php echo '["' . implode('", "', $heurecreneau) . '"]' ?>;
+            /*
             var creneauheure = [];
+            console.log(heure);
 
             for (var i = 0; i < creneau.length; i++) {
                 for (var j = 0; j < heure.length; j++)
                 creneauheure.push(creneau[i]+heure[j]);
             }
-
+*/
             console.log(creneauheure);
 
             for (var i = 0; i < creneauheure.length; i++) {
