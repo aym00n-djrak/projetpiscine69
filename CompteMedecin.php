@@ -56,7 +56,7 @@ if($BDDTrouvee){
             </tr>
             <tr>
                 <!--Prénom-->
-                <td>Prénom </td>
+                <td>Prenom </td>
                 <td><input type="text" name="prenomMedecin" /></td>
             </tr>
             <tr>
