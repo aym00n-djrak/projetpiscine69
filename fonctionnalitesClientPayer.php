@@ -1,8 +1,8 @@
 <?php 
 include "connexionBDD.php";
 echo "page paiement de service <br>";
-
-$idClientActuel = 1;
+include "client.php";
+$idClientActuel = $_SESSION['idClient'];
 
 if($BDDTrouvee){
 	$requeteAffichage = "SELECT * FROM servicelabo";
@@ -57,7 +57,7 @@ if($BDDTrouvee){
         </div>
     </nav>
 
- <form action="http://localhost/projetpiscine69/fonctionnalitesClient.html" name="boutonRetourForm"><input type="submit" class="boutonRetour" value="Retour" /> <br /> </form>
+ <form action="http://localhost/projetpiscine69/fonctionnalitesClient.php" name="boutonRetourForm"><input type="submit" class="boutonRetour" value="Retour" /> <br /> </form>
     <form method = "POST">
     Saisir id du service: <input name="idserviceSaisi" type="text"><br>
     Saisir id du labo associe a ce service: <input name="idlaboAssocie" type="text"><br>

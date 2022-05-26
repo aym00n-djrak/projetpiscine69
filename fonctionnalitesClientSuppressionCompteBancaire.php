@@ -1,9 +1,10 @@
 <?php 
 include "connexionBDD.php";
+include "client.php";
 echo "page suppression compte bancaire <br>";
 if($BDDTrouvee){
 	echo "BDD existe";
-    $idclient = 1;
+    $idclient = $_SESSION['idClient'];
 	$liste_id_comptes = array();
 	$requeteAffichage = "SELECT * FROM comptebancaire where comptebancaire.idclient = $idclient;";
 	$commandeAffichage = mysqli_query($loginBDD, $requeteAffichage);
@@ -54,7 +55,7 @@ if($BDDTrouvee){
         </div>
     </nav>
 
- <form action="http://localhost/projetpiscine69/fonctionnalitesClient.html" name="boutonRetourForm"><input type="submit" class="boutonRetour" value="Retour" /> <br /> </form>
+ <form action="http://localhost/projetpiscine69/fonctionnalitesClient.php" name="boutonRetourForm"><input type="submit" class="boutonRetour" value="Retour" /> <br /> </form>
     <form method = "POST">
 
     		<br /> VEUILLEZ CHOISIR L'ID DE VOTRE COMPTE A SUPPRIMER: <select class="compteASupprimer">

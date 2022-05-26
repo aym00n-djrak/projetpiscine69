@@ -87,7 +87,7 @@
                     <tr>
                         <!--Emploie du temps-->
                         <td>
-                            <form class="doc" method="post" action="phprdvbdd/loaddateadd.php">
+                            <form class="doc" method="post" action="phpedt/loadedt.php">
                                 <input type="hidden" name="doc" value="<?php echo $tabiddoc[$doc]; ?>"></input>
                                 <input type="hidden" name="lab" value="<?php echo $tabidlab[$lab]; ?>"></input>
                                 <input type="submit" name="button" value="Emploie du temps" text-align="center" class="btngeneraliste">

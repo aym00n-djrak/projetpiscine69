@@ -1,3 +1,6 @@
+<?php include "client.php";
+include "connect.php" ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -37,48 +40,49 @@
     </div>
   </nav>
 
-  <?php
-  include "phprdvbdd/rdv.php"
-  ?>
 
   <div class="container features">
     <form class="formulaireAjoutMedecin" method="POST" action="phprdvbdd/deleterdv.php">
-      <p class="Titre-Section">Liste de vos rendez-vous :</p>
-      <table>
-        <tr>
-          <!--Nom-->
-          <td>Rendez-vous avec le docteur</td>
-          <td><?php echo $nomMedecin ?></td>
-        </tr>
-        <tr>
-          <!--Date-->
-          <td>Date :</td>
-          <td><?php echo $dateRdv ?></td>
-        </tr>
-        <tr>
-          <!--Heure-->
-          <td>Heure :</td>
-          <td><?php echo $heureRdv ?></td>
-        </tr>
-        <tr>
-          <!--Salle-->
-          <td>Salle :</td>
-          <td><?php echo $salleLabo ?></td>
-        </tr>
-        <tr>
-          <!--Autre info-->
-          <td>Autre info :</td>
-          <td><?php echo $courrielLabo ?></td>
-        </tr>
-        <tr>
-          <!--Bouton pour annuler le rdv-->
-          <td colspan="2" align="center">
-            <input type="submit" name="Annuler le RDV" value="Annuler le RDV" text-align="center">
-            </a>
-            <?php echo $message ?>
-          </td>
-        </tr>
-      </table>
+      <p class="Titre-Section">Liste de vos rendez-vous passez:</p>
+      <?php
+
+      $idClient = $_SESSION['idClient'];
+
+      $requeteSQL = "SELECT idCreneau, dateCreneau, heureCreneau, nomMedecin, salleLabo FROM `creneau`, `medecin`, `labo` WHERE dateCreneau<CURRENT_DATE() AND idClient=$idClient";
+      $executequery = mysqli_query($bdd_login, $requeteSQL);
+
+
+      while ($donnee = mysqli_fetch_assoc($executequery)) {
+
+        ?>
+          <table>
+            <tr>
+              <!--Nom-->
+              <td>Rendez-vous avec le docteur</td>
+              <td><?php echo $nomMedecin = $donnee['nomMedecin']; ?></td>
+            </tr>
+            <tr>
+              <!--Creneau-->
+              <td>Creneau :</td>
+              <td><?php echo $heureCreneau = $donnee['heureCreneau']; ?></td>
+            </tr>
+            <tr>
+              <!--Heure-->
+              <td>Heure :</td>
+              <td><?php echo $dateCreneau = $donnee['dateCreneau']; ?></td>
+            </tr>
+            <tr>
+              <!--Salle-->
+              <td>Salle :</td>
+              <td><?php echo $salleLabo = $donnee['salleLabo']; ?></td>
+            </tr>
+          </table>
+
+      <?php
+        
+      }
+      ?>
+
     </form>
   </div>
 

@@ -1,4 +1,3 @@
-
   <?php 
 include "connexionBDD.php";
 echo "page ajout laboratoire <br>";

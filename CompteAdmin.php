@@ -40,7 +40,7 @@ if($BDDTrouvee){
                 <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
                 <li class="nav-item"><a class="nav-link" href="Parcours.html">Tout parcourir</a></li>
                 <li class="nav-item"><a class="nav-link" href="Recherche.html">Recherche</a></li>
-                <li class="nav-item"><a class="nav-link" href="RendezVous.php">Rendez-vous</a></li>
+                <li class="nav-item"><a class="nav-link" href="RendezVous.html">Rendez-vous</a></li>
                 <li class="nav-item"><a class="nav-link" href="Compte.html">Votre compte</a></li>
             </ul>
         </div>

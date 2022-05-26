@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "connexionBDD.php";
 echo "page connexion client <br>";
 if ($BDDTrouvee) {
@@ -112,16 +113,17 @@ if ($BDDTrouvee) {
             $resultat = "on sait pas encore";
             $donnee = mysqli_fetch_assoc($commande);
             if ($donnee['idClient'] != null) {
+                $idClient = $donnee['idClient'];
                 $resultat = "Connexion reussie";
-                sleep(1);
-                echo "<script> window.location = 'http://localhost/projetpiscine69/fonctionnalitesClient.html' </script>";
+                echo 'Bienvenue à la page numéro 1';
+                $_SESSION['idClient'] = $idClient;
+                echo "<script> window.location = 'http://localhost/projetpiscine69/fonctionnalitesClient.php' </script>";
             } else {
                 $resultat = "Aucun client trouve";
             }
             echo "<br>Resultat identification: $resultat<br><br>";
         }
         ?>
-        >>>>>>> charlesMain
     </form>
 
     <footer class="page-footer">

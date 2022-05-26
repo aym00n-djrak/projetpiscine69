@@ -1,3 +1,4 @@
+<?php session_start();?>
 <html>
 
 <head>
@@ -42,15 +43,14 @@
                 <?php
                 //CLIENT
 
-                $idClient = 1;
+                $idClient = $_SESSION['idClient'];
+                echo "Le client est :".$idClient;
 
                 //MEDECIN
-                $idMedecin=$iddoc;
+                $idMedecin = $iddoc;
 
                 $Docteur = $nomDocteur . ", " . $prenomDocteur;
                 $medecin = array($classemed, $Docteur);
-
-                //LABO
                 ?>
 
                 <input type="hidden" name="creneauheure" id="creneauheure" />
