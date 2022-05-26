@@ -117,7 +117,11 @@
                     <tr>
                         <!--Prendre RDV-->
                         <td colspan="2" align="center">
-                            <input type="button" name="PrendreRDV" value="Prendre un RDV" text-align="center" class="btngeneraliste">
+                            <form class="doc" method="post" action="phprdvbdd/loaddateadd.php">
+                                <input type="hidden" name="doc" value="<?php echo $tabiddoc[$doc]; ?>"></input>
+                                <input type="hidden" name="lab" value="<?php echo $tabidlab[$lab]; ?>"></input>
+                                <input type="submit" name="button" value="Prendre un RDV" text-align="center">
+                            </form>
                         </td>
                     </tr>
                 </table>
