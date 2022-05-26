@@ -1,5 +1,7 @@
 <?php 
 include "connexionBDD.php";
+include "fonctionnalitesAdmin.html";
+
 echo "page ajout medecin <br>";
 
 $idAdminActuel = 1;

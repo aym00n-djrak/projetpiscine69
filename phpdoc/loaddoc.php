@@ -3,10 +3,13 @@
 include "connect.php";
 
 $tabdoc=array();
+$tabdocprenom=array();
 $tabiddoc=array();
 $tabbureau=array();
 $tabtel=array();
 $tabmail=array();
+$tabimage=array();
+$tabvideo=array();
 
 $requeteSQL = "SELECT * FROM `medecin`";
 $executequery = mysqli_query($bdd_login, $requeteSQL);
@@ -15,6 +18,9 @@ $executequery = mysqli_query($bdd_login, $requeteSQL);
 while($donnee= mysqli_fetch_assoc($executequery)){
      $nomMedecin=$donnee['nomMedecin'];
      array_push($tabdoc, $nomMedecin);
+
+     $prenomMedecin=$donnee['prenomMedecin'];
+     array_push($tabdocprenom, $prenomMedecin);
 
      $idMedecin=$donnee['idMedecin'];
      array_push($tabiddoc,$idMedecin);
@@ -27,6 +33,12 @@ while($donnee= mysqli_fetch_assoc($executequery)){
 
      $courrielMedecin=$donnee['courrielMedecin'];
      array_push($tabmail,$courrielMedecin);     
+
+     $image=$donnee['image'];
+     array_push($tabimage,$image);
+
+     $video=$donnee['video'];
+     array_push($tabvideo,$video);   
     }
 
 /*
@@ -38,4 +50,4 @@ while($donnee= mysqli_fetch_assoc($executequery)){
         echo $tabtel[$i];
         echo $tabmail[$i];
     }
-    */?>
+    */

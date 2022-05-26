@@ -55,6 +55,10 @@
                 <p class="feature-title">Medecin choisi:</p>
                 <p>
                     <?php echo $tabdoc[$doc]; ?>
+
+                </p>
+                <p>
+                    <?php echo $tabdocprenom[$doc]; ?>
                 </p>
             </div>
 
@@ -95,7 +99,7 @@
                         </td>
                         <!--CV-->
                         <td>
-                            <a href="">
+                            <a href="cv.php">
                                 <input type="button" name="CV" value="CV" text-align="center" class="btngeneraliste">
                             </a>
                         </td>
@@ -128,10 +132,8 @@
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-12">
-                <img src="https://image.noelshack.com/fichiers-sm/2016/27/1467979112-5065-noelshack-artwork.jpg" class="img-fluid">
-                <p>
-                    <?php echo $tabdoc[$doc]; ?>
-                </p>
+                <img src="<?php echo $tabimage[$doc]; ?>" class="img-fluid">
+                <iframe src="<?php echo $tabvideo[$doc] ?>">
             </div>
         </div>
 

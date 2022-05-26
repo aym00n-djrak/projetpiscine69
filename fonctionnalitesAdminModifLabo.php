@@ -1,9 +1,6 @@
 <?php
 include "connexionBDD.php";
-echo "page modification laboratoire <br>";
-if ($BDDTrouvee) {
-    echo "BDD existe<br><br>";
-}
+
 ?>
 
 <!DOCTYPE html>

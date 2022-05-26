@@ -92,8 +92,8 @@ if ($BDDTrouvee) {
                 <div class="col-lg-4 col-md-4 col-sm-12">
                     <!--Bouton d'inscription-->
                     <h4>Vous n'etes pas membres ?<br>Inscrivez-vous ici :<br></h4>
-                    <a href="CompteClientInscription.html">
-                        <input type="submit" name="Inscription" value="Inscription" text-align="center">
+                    <a href="inscriptionClient.php">
+                        <input type="button" name="Inscription" value="Inscription" text-align="center">
                     </a>
                 </div>
             </div>
