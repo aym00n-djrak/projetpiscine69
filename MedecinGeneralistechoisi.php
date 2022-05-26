@@ -90,13 +90,13 @@
                             <form class="doc" method="post" action="phpedt/loadedt.php">
                                 <input type="hidden" name="doc" value="<?php echo $tabiddoc[$doc]; ?>"></input>
                                 <input type="hidden" name="lab" value="<?php echo $tabidlab[$lab]; ?>"></input>
-                                <input type="submit" name="button" value="Emploie du temps" text-align="center">
+                                <input type="submit" name="button" value="Emploie du temps" text-align="center" class="btngeneraliste">
                             </form>
                         </td>
                         <!--CV-->
                         <td>
                             <a href="">
-                                <input type="button" name="CV" value="CV" text-align="center">
+                                <input type="button" name="CV" value="CV" text-align="center" class="btngeneraliste">
                             </a>
                         </td>
                     </tr>
@@ -104,23 +104,23 @@
                         <!--Message texto-->
                         <td>
                             <a href="phpchat/chat.html">
-                                <input type="button" name="Message texto" value="Message texto" text-align="center">
+                                <input type="button" name="Message texto" value="Message texto" text-align="center" class="btngeneraliste">
                             </a>
                         </td>
                         <!--Message Vocal-->
                         <td>
                             <a href="https://aym00n-djrak.github.io/videocall/">
-                                <input type="button" name="Message Vocal" value="Message Vocal" text-align="center">
+                                <input type="button" name="Message Vocal" value="Message Vocal" text-align="center" class="btngeneraliste">
                             </a>
                         </td>
                     </tr>
                     <tr>
-                        <!--Bouton de validation-->
+                        <!--Prendre RDV-->
                         <td colspan="2" align="center">
                             <form class="doc" method="post" action="phprdvbdd/loaddateadd.php">
                                 <input type="hidden" name="doc" value="<?php echo $tabiddoc[$doc]; ?>"></input>
                                 <input type="hidden" name="lab" value="<?php echo $tabidlab[$lab]; ?>"></input>
-                                <input type="submit" name="button" value="Emploie du temps" text-align="center">
+                                <input type="submit" name="button" value="Emploie du temps" text-align="center" class="btngeneraliste">
                             </form>
                         </td>
                     </tr>
