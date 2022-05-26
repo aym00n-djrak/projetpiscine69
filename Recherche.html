@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="Accueil.css">
     <script type="text/javascript">
         $(document).ready(function () {
@@ -18,11 +23,9 @@
 
 <body>
 
-    <header class="page-header header container-fluid">
+    <header class="header ">
         <div class="logo">
             <img src="logo.png">
-        </div>
-        <div class="nom">
             <h1>Omnes Sante</h1>
         </div>
     </header>
@@ -33,7 +36,7 @@
                 <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
                 <li class="nav-item"><a class="nav-link" href="Parcours.html">Tout parcourir</a></li>
                 <li class="nav-item"><a class="nav-link" href="Recherche.html">Recherche</a></li>
-                <li class="nav-item"><a class="nav-link" href="RendezVous.html">Rendez-vous</a></li>
+                <li class="nav-item"><a class="nav-link" href="RendezVous.php">Rendez-vous</a></li>
                 <li class="nav-item"><a class="nav-link" href="Compte.html">Votre compte</a></li>
             </ul>
         </div>
@@ -43,10 +46,12 @@
         <p class="Titre-Section">Recherche :</p>
         <tr>
             <td>
-                <input type="text" name="nomclient" label="Nom du client:" size="100%">
+                <input class="form-control input-normal" type="text" id="search-user"
+                    placeholder="Rechercher Spécialitées, Etablissements ou Médecins" size="20px" />
+                <div id="result-research"></div>
             </td>
             <td>
-                <input type="submit" name="Rechercher" value="Rechercher" text-align="center">
+                <input type="submit" id="search-user" name="Rechercher" value="Rechercher" text-align="center">
             </td>
         </tr>
     </div>
@@ -72,12 +77,37 @@
                     info@webDynamique.ece.fr <br>
                     +33 01 02 03 04 05 <br>
                 </p>
-
             </div>
-
         </div>
-
     </footer>
+
+    <script>
+        $(document).ready(function () {
+            $('#search-user').keyup(function () {
+                $('#result-research').html('');
+                var recherche = $(this).val();
+
+                console.log(recherche);
+
+                if (recherche != "") {
+                    $.ajax({
+                        type: 'GET',
+                        url: 'phpsearchbar/recherche.php',
+                        data: 'user=' + encodeURIComponent(recherche),
+                        success: function (data) {
+                            if (data != "") {
+                                $('#result-research').append(data);
+                            }
+                            else {
+                                $( "#result-research" ).empty();
+                                document.getElementById('result-research').innerHTML = "<div style='font-size: 20px; text-align: center; margin-top: 10px;'>La recherche est nulle</div>"
+                            }
+                        }
+                    });
+                }
+            })
+        });
+    </script>
 
 </body>
 
