@@ -159,7 +159,7 @@ if ($BDDTrouvee) {
 				</tr>
 				<tr>
 					<td colspan="2" align="center">
-						<input type="submit" name="ordreModification" value="Modifier ce medecin" />
+						<input type="submit" class="submitform" name="ordreModification" value="Modifier ce medecin" />
 					</td>
 				</tr>
 			</table>

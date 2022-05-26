@@ -431,44 +431,52 @@ li {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
 }
 
+input[type=submit],
 input[type=button] {
     background-color: midnightblue;
     color: azure;
     border-color: midnightblue;
+    
     /*width: 175px;
     height: 50px;*/
 }
-
+input[type=submit]:hover,
 input[type=button]:hover {
     background-color: azure;
     color: midnightblue;
     cursor: pointer;
 }
 
-input[type=submit] {
-    background-color: midnightblue;
-    color: azure;
-    border-color: midnightblue;
-    /*width: 120px;
-    height: 30px;
-    margin-top: 10px;*/
-}
-
-input[type=submit]:hover {
-    background-color: azure;
-    color: midnightblue;
-    cursor: pointer;
-}
-
 .btnform {
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     margin-right: 100px;
+    border-radius: 40px;
+    width: 400px;
+    height: 50px;
+}
+
+.submitform{
+    border-radius: 50px;
+    margin-top: 15px;
 }
 
 .btngeneraliste {
     width: 175px;
     height: 50px;
 }
+
+input[type=email],
+input[type=number],
+input[type=password],
+input[type=text] {
+    border-color: midnightblue;
+    border-radius: 10px;
+}
+
+tr{
+    height: 40px;
+}
+
 
 /***************PPPIIIMMMPPPP*********************/
 
