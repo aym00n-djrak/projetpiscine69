@@ -46,6 +46,8 @@ CREATE TABLE medecin(
         courrielMedecin   Varchar (50) NOT NULL ,
         formationCV       Varchar (50) NOT NULL ,
         experiencesCV     Varchar (50) NOT NULL ,
+        image             Text NOT NULL ,
+        video             Text NOT NULL ,
         idAdmin           Int NOT NULL
 	,CONSTRAINT medecin_PK PRIMARY KEY (idMedecin)
 
