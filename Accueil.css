@@ -210,63 +210,69 @@ li {
     counter-increment: item;
 }
 
-.imgCarrou1{
+.imgCarrou1 {
+
     background-image: url('https://media.istockphoto.com/vectors/family-suffering-from-social-media-addiction-vector-id1209904398?k=20&m=1209904398&s=612x612&w=0&h=QP8gTYXr2_Bol1JsCJaOrBWGkuwYfcwZTgk1wVhI-fY=');
     block-size: 100%;
     display: flex;
     margin: auto;
 }
 
-.imgCarrou2{
+
+.imgCarrou2 {
+
     background-image: url('https://media.istockphoto.com/vectors/urologist-examines-male-genitourinary-system-diagnosis-of-prostatitis-vector-id1386040971?k=20&m=1386040971&s=612x612&w=0&h=7DvMjL2JaAsULlOcaJ6W8kZZuCBW7giTih_3a7l5GHU=');
     block-size: 100%;
     display: flex;
     margin: auto;
 }
 
-.imgCarrou3{
+.imgCarrou3 {
+
     background-image: url('https://media.istockphoto.com/vectors/high-blood-pressure-hypertension-disease-tiny-doctors-treat-check-vector-id1218942609?k=20&m=1218942609&s=612x612&w=0&h=kgB0mM8wFvl2YUmQXIA2DPQlXDFCJPTfs2cjw6XICak=');
     block-size: 100%;
     display: flex;
     margin: auto;
 }
 
-.imgCarrou4{
+.imgCarrou4 {
+
     background-image: url('https://media.istockphoto.com/vectors/dermatology-and-skin-health-care-concept-vector-flat-modern-doctor-vector-id1304919796?k=20&m=1304919796&s=612x612&w=0&h=Qp8bPxPspSilMqF5KCss99fPOkQyANj10o12-7T1pew=');
     block-size: 100%;
     display: flex;
     margin: auto;
 }
 
-.imgCarrou5{
+.imgCarrou5 {
+
     background-image: url('https://media.istockphoto.com/vectors/bowel-disease-searching-health-care-medicine-concept-vector-flat-vector-id1185243231?k=20&m=1185243231&s=612x612&w=0&h=gsoBh3SijuJb0UynAzrQgrNBKZtdWXKQqZwpuuGszzU=');
     block-size: 100%;
     display: flex;
     margin: auto;
 }
 
-.imgCarrou6{
+.imgCarrou6 {
     background-image: url('https://media.istockphoto.com/vectors/gynecology-and-women-health-consultation-with-a-gynecologist-or-vector-id1195893421?k=20&m=1195893421&s=612x612&w=0&h=8mvE_ev36Rw7P6b7oBoWY7rZQDy_CW23IrbtCp3F22w=');
     block-size: 100%;
     display: flex;
     margin: auto;
 }
 
-.imgCarrou7{
+.imgCarrou7 {
     background-image: url('https://media.istockphoto.com/vectors/sexually-transmitted-diseases-concept-vector-illustration-vector-id1133864280?k=20&m=1133864280&s=612x612&w=0&h=S3djcG2EpAnv3un8qQ2bqqyqgO0eMgu34kQ004Z2TH4=');
     block-size: 100%;
     display: flex;
     margin: auto;
 }
 
-.imgCarrou8{
+.imgCarrou8 {
     background-image: url('https://media.istockphoto.com/vectors/professional-tiny-doctors-examining-spine-bones-vector-id1296488484?k=20&m=1296488484&s=612x612&w=0&h=8l7XoFnBnx9BxhZf-O1BxVp-1_Ou5RT45TGPlx9sQK0=');
     block-size: 100%;
     display: flex;
     margin: auto;
 }
 
-.txtCarrou{
+.txtCarrou {
     background-color: azure;
     text-transform: uppercase;
     border-radius: 25px;
@@ -287,7 +293,6 @@ li {
 #carousel__slide2 {
     /*background-image: url();*/
     background-color: blue;
-    
 }
 
 /*Slide 3*/
@@ -431,31 +436,48 @@ li {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
 }
 
+input[type=submit],
 input[type=button] {
     background-color: midnightblue;
     color: azure;
-    width: 175px;
-    height: 50px;
+    border-color: midnightblue;
 }
 
+
+input[type=submit]:hover,
 input[type=button]:hover {
     background-color: azure;
     color: midnightblue;
     cursor: pointer;
 }
-
-input[type=submit] {
-    background-color: midnightblue;
-    color: azure;
-    width: 120px;
-    height: 30px;
-    margin-top: 10px;
+.btnform {
+    margin-bottom: 20px;
+    margin-right: 100px;
+    border-radius: 40px;
+    width: 400px;
+    height: 50px;
 }
 
-input[type=submit]:hover {
-    background-color: azure;
-    color: midnightblue;
-    cursor: pointer;
+.submitform{
+    border-radius: 50px;
+    margin-top: 15px;
+}
+
+.btngeneraliste {
+    width: 175px;
+    height: 50px;
+}
+
+input[type=email],
+input[type=number],
+input[type=password],
+input[type=text] {
+    border-color: midnightblue;
+    border-radius: 10px;
+}
+
+tr{
+    height: 40px;
 }
 
 /***************PPPIIIMMMPPPP*********************/

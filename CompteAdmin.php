@@ -67,7 +67,7 @@ if($BDDTrouvee){
             <tr>
                 <!--Bouton de validation-->
                 <td colspan="2" align="center">
-                   <input type="submit" name="loginEspaceAdmin" value="Se connecter" text-align="center"/>
+                   <input type="submit" class="submitform" name="loginEspaceAdmin" value="Se connecter" text-align="center"/>
                 </td>
             </tr>
         </table>

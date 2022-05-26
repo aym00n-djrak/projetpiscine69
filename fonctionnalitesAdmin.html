@@ -38,50 +38,195 @@
 			</ul>
 		</div>
 	</nav>
-	<h1>Bienvenue dans votre espace administrateur</h1>
+	<div class="container features">
 
-	<form name="boutonAjout"> <input type="button" class="boutonAjoutMedecin" value="Ajouter un medecin" onclick="affichageFormulaireAjoutMedecin()" /> </form>
-	<form action="http://localhost/projetpiscine69/fonctionnalitesAdminSuppressionMedecin.php" name="boutonSupprimerForm"> <input type="submit" class="boutonSupprimerMedecin" value="Supprimer un medecin" /> </form>
-	<form action="http://localhost/projetpiscine69/fonctionnalitesAdminModifMedecin.php" name="boutonModifForm"><input type="submit" class="boutonModifierMedecin" value="Modifier un medecin" /> <br /> </form>
-	<br />
-	<form name="boutonAjoutLabo"> <input type="button" class="boutonAjoutLabo" value="Ajouter un laboratoire" onclick="affichageFormulaireAjoutLabo()" /> <br /></form>
-	<form action="http://localhost/projetpiscine69/fonctionnalitesAdminSuppressionLabo.php" name="boutonSupprimerLabo"> <input type="submit" class="boutonSupprimerLabo" value="Supprimer un laboratoire" />  </form>
-	<form action="http://localhost/projetpiscine69/fonctionnalitesAdminModifLabo.php" name="boutonModifLaboForm"><input type="submit" class="boutonModifierLabo" value="Modifier un laboratoire" /> <br /> </form>
-	<form action="http://localhost/projetpiscine69/fonctionnalitesAdminAjoutService.php" name="boutonAjoutServiceForm"><input type="submit" class="boutonAjoutService" value="Associer un nouveau service e un laboratoire" />  </form>
-	<form action="http://localhost/projetpiscine69/fonctionnalitesAdminSuppressionService.php" name="boutonSupprimerService"> <input type="submit" class="boutonSupprimerLabo" value="Supprimer un service d'un laboratoire" /> <br /> </form>
+		<p class="Titre-Section">Bienvenue dans votre espace administrateur</p>
+		<table>
+			<tr>
+				<td>
+					<form name="boutonAjout">
+						<input type="button" class="btnform" value="Ajouter un medecin"
+							onclick="affichageFormulaireAjoutMedecin()" />
+					</form>
+				</td>
+				<td>
+					<form action="http://localhost/projetpiscine69/fonctionnalitesAdminSuppressionMedecin.php"
+						name="boutonSupprimerForm">
+						<input type="submit" class="btnform" value="Supprimer un medecin" />
+					</form>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<form action="http://localhost/projetpiscine69/fonctionnalitesAdminModifMedecin.php"
+						name="boutonModifForm">
+						<input type="submit" class="btnform" value="Modifier un medecin" />
+					</form>
+				</td>
+				<td>
+					<form name="boutonAjoutLabo">
+						<input type="button" class="btnform" value="Ajouter un laboratoire"
+							onclick="affichageFormulaireAjoutLabo()" />
+					</form>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<form action="http://localhost/projetpiscine69/fonctionnalitesAdminSuppressionLabo.php"
+						name="boutonSupprimerLabo">
+						<input type="submit" class="btnform" value="Supprimer un laboratoire" />
+					</form>
+				</td>
+				<td>
+					<form action="http://localhost/projetpiscine69/fonctionnalitesAdminModifLabo.php"
+						name="boutonModifLaboForm">
+						<input type="submit" class="btnform" value="Modifier un laboratoire" />
+					</form>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<form action="http://localhost/projetpiscine69/fonctionnalitesAdminAjoutService.php"
+						name="boutonAjoutServiceForm">
+						<input type="submit" class="btnform" value="Associer un nouveau service e un laboratoire" />
+					</form>
+				</td>
+				<td>
+					<form action="http://localhost/projetpiscine69/fonctionnalitesAdminSuppressionService.php"
+						name="boutonSupprimerService">
+						<input type="submit" class="btnform" value="Supprimer un service d'un laboratoire" />
+					</form>
+				</td>
+			</tr>
+		</table>
 
-	<form class="formulaireAjoutMedecin" method="POST" action="http://localhost/projetpiscine69/fonctionnalitesAdminAjoutMedecin.php">
-		<br />VEUILLEZ SAISIR LES INFORMATIONS DU NOUVEAU MEDECIN<br />
-		Nom: <input type="text" name="nomMedecin" /> <br />
-		Prenom: <input type="text" name="prenomMedecin" /> <br />
-		Specialite: <select name="specialite">
-			<option value="">choisir...</option>
-			<option value="generaliste">Medecin generaliste</option>
-			<option value="addictologie">Addictologie</option>
-			<option value="cardiologie">Cardiologie</option>
-			<option value="dermatologie">Dermatologie</option>
-			<option value="andrologie">Andrologie</option>
-			<option value="gastro-hepato-enterologie">Gastro-Hepato-Enterologie</option>
-			<option value="gynecologie">Gynecologie</option>
-			<option value="ist">IST</option>
-			<option value="osteopathie">Osteopathie</option>
-		</select> <br />
-		Bureau: <input type="text" name="bureauMedecin" /> <br />
-		Courriel: <input type="email" name="courrielMedecin" /> <br />
-		Telephone: <input type="number" text" name="telMedecin" /> <br />
-		Formation CV (50 caracteres maximum): <br /> <textarea maxlength="50" name="formationsCVMedecin"></textarea> <br />
-		Experiences CV (50 caracteres maximum): <br /> <textarea maxlength="50" name="experiencesCVMedecin"></textarea> <br />
-		<input type="submit" name="ordreAjout" value="Ajouter ce medecin" />
-	</form>
+		<form class="formulaireAjoutMedecin" method="POST"
+			action="http://localhost/projetpiscine69/fonctionnalitesAdminAjoutMedecin.php">
+			<br>
+			<p class="feature-title">VEUILLEZ SAISIR LES INFORMATIONS DU NOUVEAU MEDECIN</p>
 
-	<form class="formulaireAjoutLabo" method="POST" action="http://localhost/projetpiscine69/fonctionnalitesAdminAjoutLabo.php">
-		<br />VEUILLEZ SAISIR LES INFORMATIONS DU NOUVEAU LABORATOIRE<br />
-		Salle: <input type="text" name="salleLabo" /> <br />
-		Courriel: <input type="email" name="courrielLabo" /> <br />
-		Telephone: <input type="number" name="telLabo" /> <br />
-		<input type="submit" name="ordreAjoutLabo" value="Ajouter ce laboratoire" />
-	</form>
+			<table>
+				<tr>
+					<td>
+						<p>Nom :</p>
+					</td>
+					<td>
+						<input type="text" name="nomMedecin" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>Prenom :</p>
+					</td>
+					<td>
+						<input type="text" name="prenomMedecin" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>Specialite: </p>
+					</td>
+					<td>
+						<select name="specialite">
+							<option value="">choisir...</option>
+							<option value="generaliste">Medecin generaliste</option>
+							<option value="addictologie">Addictologie</option>
+							<option value="cardiologie">Cardiologie</option>
+							<option value="dermatologie">Dermatologie</option>
+							<option value="andrologie">Andrologie</option>
+							<option value="gastro-hepato-enterologie">Gastro-Hepato-Enterologie</option>
+							<option value="gynecologie">Gynecologie</option>
+							<option value="ist">IST</option>
+							<option value="osteopathie">Osteopathie</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>Bureau: </p>
+					</td>
+					<td>
+						<input type="text" name="bureauMedecin" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>Courriel: </p>
+					</td>
+					<td>
+						<input type="email" name="courrielMedecin" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>Telephone: </p>
+					</td>
+					<td>
+						<input type="number" text" name="telMedecin" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>Formation CV (50 caracteres maximum): </p>
+					</td>
+					<td>
+						<textarea maxlength="50" name="formationsCVMedecin"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>Experiences CV (50 caracteres maximum): </p>
+					</td>
+					<td>
+						<textarea maxlength="50" name="experiencesCVMedecin"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input type="submit" class="submitform" name="ordreAjout" value="Ajouter ce medecin" />
+					</td>
+				</tr>
+			</table>
+		</form>
 
+		<form class="formulaireAjoutLabo" method="POST"
+			action="http://localhost/projetpiscine69/fonctionnalitesAdminAjoutLabo.php">
+			<br>
+			<p class="feature-title">VEUILLEZ SAISIR LES INFORMATIONS DU NOUVEAU LABORATOIRE</p>
+
+			<table>
+				<tr>
+					<td>
+						Salle:
+					</td>
+					<td>
+						<input type="text" name="salleLabo" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Courriel:
+					</td>
+					<td>
+						<input type="email" name="courrielLabo" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Telephone:
+					</td>
+					<td>
+						<input type="number" name="telLabo" />
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input type="submit" class="submitform" name="ordreAjoutLabo" value="Ajouter ce laboratoire" />
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
 
 	<footer class="page-footer">
 
@@ -89,9 +234,10 @@
 
 			<div class="col-lg-8 col-md-8 col-sm-20">
 
-				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7008.822583384912!2d2.2823564991389347!3d48.851686907281966!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6701b4f58251b%3A0x167f5a60fb94aa76!2sECE%20Paris%20Lyon!5e0!3m2!1sfr!2sfr!4v1653309618172!5m2!1sfr!2sfr"
-						width="100%" height="100%" style="border:0" allowfullscreen="" loading="lazy"
-						referrerpolicy="no-referrer-when-downgrade"></iframe>
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7008.822583384912!2d2.2823564991389347!3d48.851686907281966!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6701b4f58251b%3A0x167f5a60fb94aa76!2sECE%20Paris%20Lyon!5e0!3m2!1sfr!2sfr!4v1653309618172!5m2!1sfr!2sfr"
+					width="100%" height="100%" style="border:0" allowfullscreen="" loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 			</div>
 

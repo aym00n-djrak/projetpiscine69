@@ -15,7 +15,6 @@ if($BDDTrouvee){
 	$taileListeIdcomptes = count($liste_id_comptes);
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 
@@ -65,11 +64,13 @@ if($BDDTrouvee){
 					let taille = <?php echo $taileListeIdcomptes;?>;
 					for(let parcours = 0; parcours<taille; ++parcours){
 						$(".compteASupprimer").append("<option value= <?php echo $liste_id_comptes[$count];?>>Id <?php echo $liste_id_comptes[$count];?></option>");
+
 						<?php $count++;?>
 					}
 				</script>
 			</select>
-			<br>Option alternative: saisir l'id de votre compte à supprimer: <input type="text" name="idSupTextField">
+
+			<br>Option alternative: saisir l'id de votre compte ï¿½ supprimer: <input type="text" name="idSupTextField">
 				<input type="submit" name="ordreSuprression" value="Supprimer ce laboratoire" /><br>
 				
 				<?php 
