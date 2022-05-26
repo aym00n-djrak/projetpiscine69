@@ -39,7 +39,8 @@
 
         <div id="edt">
             <?php
-            include "loaddate.php";
+           
+            $Docteur=$nomDocteur.", ".$prenomDocteur;
 
             //tout les creneaux réservé
             $creneau;
@@ -52,8 +53,7 @@
             for ($i = 0; $i < count($jour); $i++)
                 array_push($matin_soir, "AM", "PM");
 
-            $classemed = "Médicine générale";
-            $Docteur = "BOUREE, Patrice";
+
             $medecin = array($classemed, $Docteur);
 
 
@@ -96,7 +96,7 @@
             ?>
         </div>
     </table>
-    <a href="http://localhost/projetpiscine69//MedecinGeneraliste.html">
+    <a href="http://localhost/projetpiscine69//MedecinGeneraliste.php">
         <input type="button" value="exit" />
     </a>
 
@@ -105,9 +105,9 @@
             var idtab = <?php echo '["' . implode('", "', $idtab) . '"]' ?>;
             var creneau = <?php echo '["' . implode('", "', $creneau) . '"]' ?>;
             var heure = <?php echo '["' . implode('", "', $heureres) . '"]' ?>;
-            var creneauheure=<?php echo '["' . implode('", "', $heurecreneau) . '"]' ?>;
+            var creneauheure = <?php echo '["' . implode('", "', $heurecreneau) . '"]' ?>;
             console.log(idtab);
-            console.log("Creneau Heure: "+creneauheure);
+            console.log("Creneau Heure: " + creneauheure);
             for (var i = 0; i < creneauheure.length; i++) {
                 for (var j = 0; j < idtab.length; j++)
                     if (idtab[j] == creneauheure[i]) {

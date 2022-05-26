@@ -2,7 +2,7 @@
 include "connect.php";
 
 //Mettre un idClient dynamique
-$idClient="5";
+$idClient="1";
 $idLabo;
 $idMedecin;
 $idCreneau;

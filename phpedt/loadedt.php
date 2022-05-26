@@ -5,6 +5,9 @@ if (isset($_POST['button'])) {
     $iddoc = $_POST["doc"] != "" ? $_POST["doc"] : "doc vide";
     $idlab = $_POST["lab"] != "" ? $_POST["lab"] : "lab vide";
 }
+echo "Le doc est : $iddoc";
+echo "Le lab est : $idlab";
+
 
 //on recup le docteur
 $classemed;
@@ -19,6 +22,7 @@ while ($donnee = mysqli_fetch_assoc($executequery)) {
     $nomDocteur= $donnee['nomMedecin'];
     $prenomDocteur= $donnee['prenomMedecin'];
 }
+
 
 
 date_default_timezone_set('Europe/Paris');
@@ -40,12 +44,10 @@ $heureres=array();
 $heurecreneau=array();
 
 
-//Rajouter id LABO + id Medecin
-
 for($i=0;$i<COUNT($jour);$i++)
 {
-    $requeteSQL = "SELECT heureCreneau, dateCreneau FROM `creneau` WHERE dateCreneau = '$jour[$i]' AND idMedecin=$iddoc AND idLabo=$idlab";
-    $executequery = mysqli_query($bdd_login, $requeteSQL);
+$requeteSQL = "SELECT heureCreneau, dateCreneau FROM `creneau` WHERE dateCreneau = '$jour[$i]' AND idMedecin=$iddoc AND idLabo=$idlab";
+$executequery = mysqli_query($bdd_login, $requeteSQL);
 
 
 while($donnee= mysqli_fetch_assoc($executequery)){
@@ -60,6 +62,7 @@ while($donnee= mysqli_fetch_assoc($executequery)){
     }
 }
 
+/*
 for($i=0;$i<COUNT($creneau);$i++)
 echo $creneau[$i]."<br>";
 for($i=0;$i<COUNT($heureres);$i++)
@@ -67,7 +70,8 @@ echo $heureres[$i]."<br>";
 
 for($i=0;$i<COUNT($heurecreneau);$i++)
 echo $heurecreneau[$i]."<br>";
+*/
 
-include "edtadd.php";
+include "edt.php";
 
 ?>

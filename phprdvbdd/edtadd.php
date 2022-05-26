@@ -37,30 +37,30 @@
 <body onload="color()">
     <form class="ajoutRDV" method="POST" action="addrdv.php">
         <table>
-
             <div id="edt">
 
-                <input type="hidden" name="creneauheure" id="creneauheure" />
-                <input type="hidden" name="heure" id="heure" />
-
-
                 <?php
-                include "loaddateadd.php";
-
                 //CLIENT
 
                 $idClient = 1;
 
                 //MEDECIN
-                $idMedecin = 1;
+                $idMedecin=$iddoc;
 
-                $classemed = "Médicine générale";
-                $Docteur = "BOUREE, Patrice";
+                $Docteur = $nomDocteur . ", " . $prenomDocteur;
                 $medecin = array($classemed, $Docteur);
 
                 //LABO
-                $idLabo = 1;
+                ?>
 
+                <input type="hidden" name="creneauheure" id="creneauheure" />
+                <input type="hidden" name="heure" id="heure" />
+                <input type="hidden" name="idMedecin" value="<?php echo $idMedecin; ?>"></input>
+                <input type="hidden" name="idLabo" value="<?php echo $idlab; ?>"></input>
+                <input type="hidden" name="idClient" value="<?php echo $idClient; ?>"></input>
+
+
+                <?php
                 //tout les creneaux réservé
                 $creneau;
                 $heureres;
@@ -110,7 +110,7 @@
 
                 ?>
 
-                <a href="http://localhost/projetpiscine69//MedecinGeneraliste.html">
+                <a href="http://localhost/projetpiscine69//MedecinGeneraliste.php">
                     <input type="button" value="exit" />
                 </a>
 
