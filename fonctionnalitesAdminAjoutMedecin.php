@@ -12,10 +12,13 @@ $tel = isset($_POST['telMedecin']) ? $_POST['telMedecin'] : "0";
 $courriel = isset($_POST['courrielMedecin']) ? $_POST['courrielMedecin'] : "0";
 $formations = isset($_POST['formationsCVMedecin']) ? $_POST['formationsCVMedecin'] : "0";
 $experiences = isset($_POST['experiencesCVMedecin']) ? $_POST['experiencesCVMedecin'] : "0";
+$image = isset($_POST['image']) ? $_POST['image'] : "0";
+$video = isset($_POST['video']) ? $_POST['video'] : "0";
+
 if($BDDTrouvee){
 	echo "BDD existe<br>";
 
-	$requete = "INSERT INTO `hopital`.`medecin` (`idMedecin`, `nomMedecin`, `prenomMedecin`, `specialiteMedecin`, `bureauMedecin`, `telMedecin`, `courrielMedecin`, `formationCV`, `experiencesCV`, `idAdmin`) VALUES (NULL, '$nom', '$prenom', '$specialite', '$bureau', '$tel', '$courriel', '$formations', '$experiences', '$idAdminActuel');";
+	$requete = "INSERT INTO `hopital`.`medecin` (`idMedecin`, `nomMedecin`, `prenomMedecin`, `specialiteMedecin`, `bureauMedecin`, `telMedecin`, `courrielMedecin`, `formationCV`, `experiencesCV`, `image`,`video`,`idAdmin`) VALUES (NULL, '$nom', '$prenom', '$specialite', '$bureau', '$tel', '$courriel', '$formations', '$experiences', '$image','$video','$idAdminActuel');";
 	$commande = mysqli_query($loginBDD, $requete);
 	echo "Ajout medecin OK<br><br>";
 
@@ -31,6 +34,8 @@ if($BDDTrouvee){
 	echo "courrielMedecin: " . $donnee['courrielMedecin'] . '<br>';
 	echo "formationCV: " . $donnee['formationCV'] . '<br>';
 	echo "experiencesCV: " . $donnee['experiencesCV'] . '<br>';
+	echo "Image: " . $donnee['image'] . '<br>' . '<br>';
+	echo "Video: " . $donnee['video'] . '<br>' . '<br>';
 	echo "idAdmin: " . $donnee['idAdmin'] . '<br>' . '<br>';
 	}
 }
