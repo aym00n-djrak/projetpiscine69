@@ -2,16 +2,16 @@
 include "connexionBDD.php";
 echo "page suppression d'un service d'un laboratoire <br>";
 if ($BDDTrouvee) {
-    echo "BDD existe";
+    //echo "BDD existe";
 
     $liste_id_servicesAssocieAUnLabo = array();
     $requeteAffichage = "SELECT * FROM servicelabo";
     $commandeAffichage = mysqli_query($loginBDD, $requeteAffichage);
     while ($donnee = mysqli_fetch_assoc($commandeAffichage)) {
-        echo "idServiceAssocieAUnLabo: " . $donnee['idServiceLabo'] . '<br>';
+        //echo "idServiceAssocieAUnLabo: " . $donnee['idServiceLabo'] . '<br>';
         array_push($liste_id_servicesAssocieAUnLabo, $donnee['idServiceLabo']);
     }
-    print_r($liste_id_servicesAssocieAUnLabo);
+    //print_r($liste_id_servicesAssocieAUnLabo);
     $tailleListeIdServicesAssociesADesLabos = count($liste_id_servicesAssocieAUnLabo);
 }
 ?>
@@ -104,6 +104,10 @@ if ($BDDTrouvee) {
                 $commande = mysqli_query($loginBDD, $requete);
                 echo "<br>Suppression de ce service du labo avec idservice $idASupprimer OK<br><br>";
             }
+                                        $requeteliste = "select distinct nomservicelabo, idlabo from servicelabo order by idlabo;";
+                $commande = mysqli_query($loginBDD, $requeteliste);
+                while($donnee = mysqli_fetch_assoc($commande)){
+                echo "<br><b> Labo</b>" . $donnee['idlabo'] . " <b> propose </b> " . $donnee['nomservicelabo'];}
             ?>
         </form>
     </div>

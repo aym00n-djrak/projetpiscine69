@@ -184,6 +184,12 @@ if ($BDDTrouvee) {
 				$commande = mysqli_query($loginBDD, $requete);
 				echo "<br>Modification medecin avec id $idAModifier OK<br><br>";
 			}
+				$requeteAffichage = "SELECT * FROM medecin";
+	$commandeAffichage = mysqli_query($loginBDD, $requeteAffichage);
+	while($donnee = mysqli_fetch_assoc($commandeAffichage)){
+		echo "<br><b> Id:</b>" . $donnee['idMedecin']."<b> Nom:</b>" . $donnee['nomMedecin'] . " <b> Prenom: </b> " . $donnee['prenomMedecin']. " <b> Bureau: </b> " . $donnee['bureauMedecin']. " <b> Specialite: </b> " . $donnee['specialiteMedecin'];
+
+	}
 			?>
 		</form>
 	</div>

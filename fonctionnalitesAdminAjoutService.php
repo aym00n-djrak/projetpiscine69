@@ -2,7 +2,7 @@
 include "connexionBDD.php";
 echo "page associaton d'un service e un laboratoire <br>";
 if ($BDDTrouvee) {
-    echo "BDD existe<br><br>";
+    //echo "BDD existe<br><br>";
 
 }
 ?>
@@ -129,6 +129,11 @@ if ($BDDTrouvee) {
                     $requete = "INSERT INTO `hopital`.`servicelabo` (`idServiceLabo`, `nomServiceLabo`, `tarifServiceLabo`, `idLabo`) VALUES (NULL, '$nomService', '$tarifService', '$idLaboAAssocier');";
                     $commande = mysqli_query($loginBDD, $requete);
                     echo "<br>Association du service $nomService au labo $idLaboAAssocier OK<br><br>";
+
+                                                $requeteliste = "select distinct nomservicelabo, idlabo from servicelabo order by idlabo;";
+                $commande = mysqli_query($loginBDD, $requeteliste);
+                while($donnee = mysqli_fetch_assoc($commande)){
+                echo "<br><b> Labo</b>" . $donnee['idlabo'] . " <b> propose </b> " . $donnee['nomservicelabo'];}
                 }
 
                 ?>

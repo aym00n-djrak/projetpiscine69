@@ -27,17 +27,7 @@ if($BDDTrouvee){
 	$requeteAffichage = "SELECT * FROM medecin";
 	$commandeAffichage = mysqli_query($loginBDD, $requeteAffichage);
 	while($donnee = mysqli_fetch_assoc($commandeAffichage)){
-	echo "idMedecin: " . $donnee['idMedecin'] . '<br>';
-	echo "nomMedecin: " . $donnee['nomMedecin'] . '<br>';
-	echo "prenomMedecin: " . $donnee['prenomMedecin'] . '<br>';
-	echo "specialiteMedecin: " . $donnee['specialiteMedecin'] . '<br>';
-	echo "bureauMedecin: " . $donnee['bureauMedecin'] . '<br>';
-	echo "telMedecin: " . $donnee['telMedecin'] . '<br>';
-	echo "courrielMedecin: " . $donnee['courrielMedecin'] . '<br>';
-	echo "formationCV: " . $donnee['formationCV'] . '<br>';
-	echo "experiencesCV: " . $donnee['experiencesCV'] . '<br>';
-	echo "Image: " . $donnee['image'] . '<br>' . '<br>';
-	echo "Video: " . $donnee['video'] . '<br>' . '<br>';
-	echo "idAdmin: " . $donnee['idAdmin'] . '<br>' . '<br>';
+		echo "<br><b> Id:</b>" . $donnee['idMedecin']."<b> Nom:</b>" . $donnee['nomMedecin'] . " <b> Prenom: </b> " . $donnee['prenomMedecin']. " <b> Bureau: </b> " . $donnee['bureauMedecin']. " <b> Specialite: </b> " . $donnee['specialiteMedecin'];
+
 	}
 }

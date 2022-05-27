@@ -43,7 +43,7 @@ include "connexionBDD.php";
         </div>
     </nav>
 
-    <<<<<<< HEAD <form action="http://localhost/projetpiscine69/fonctionnalitesAdmin.html" name="boutonRetourForm"><input type="submit" class="boutonRetour" value="Retour" /> <br /> </form>
+   <form action="http://localhost/projetpiscine69/fonctionnalitesAdmin.html" name="boutonRetourForm"><input type="submit" class="boutonRetour" value="Retour" /> <br /> </form>
         <form method="POST">
             <br />VEUILLEZ CHOISIR LE LABORATOIRE A MODIFIER: <select name="laboAModifier">
                 <option>choisir...</option>
@@ -59,6 +59,12 @@ include "connexionBDD.php";
             <input type="submit" name="ordreModifLabo" value="Modifier ce laboratoire" />
 
             <?php
+            	$requeteAffichage = "SELECT * FROM labo";
+	$commandeAffichage = mysqli_query($loginBDD, $requeteAffichage);
+    echo'<br><br>';
+	while($donnee = mysqli_fetch_assoc($commandeAffichage)){
+	echo "<br><b>idLabo</b>: " . $donnee['idLabo'] . " <b>TelLabo</b>: " . $donnee['telLabo'] . "<b> CourrielLabo</b>: " . $donnee['courrielLabo'];
+	}
             if (isset($_POST['ordreModifLabo'])) {
                 //$idAdminActuel = 1;
                 $salle = isset($_POST['salleLabo']) ? $_POST['salleLabo'] : " ";
@@ -69,9 +75,9 @@ include "connexionBDD.php";
                 $commande = mysqli_query($loginBDD, $requete);
                 echo "<br>Modification laboratoire avec id $idAModifier OK<br><br>";
             }
+
             ?>
         </form>
-        =======
         <div class="container features">
 
             <p class="Titre-Section">VEUILLEZ CHOISIR LE LABORATOIRE A MODIFIER :</p>

@@ -2,16 +2,16 @@
 include "connexionBDD.php";
 echo "page suppression laboratoire <br>";
 if ($BDDTrouvee) {
-    echo "BDD existe";
+    //echo "BDD existe";
 
     $liste_id_labos = array();
     $requeteAffichage = "SELECT * FROM labo";
     $commandeAffichage = mysqli_query($loginBDD, $requeteAffichage);
     while ($donnee = mysqli_fetch_assoc($commandeAffichage)) {
-        echo "idLabo: " . $donnee['idLabo'] . '<br>';
+    //    echo "idLabo: " . $donnee['idLabo'] . '<br>';
         array_push($liste_id_labos, $donnee['idLabo']);
     }
-    print_r($liste_id_labos);
+    //print_r($liste_id_labos);
     $taileListeIdLabos = count($liste_id_labos);
 }
 ?>
@@ -100,6 +100,12 @@ if ($BDDTrouvee) {
             //$idASupprimer = isset($_POST['laboASupprimer']) ? $_POST['laboASupprimer'] : 0;
             $idASupprimer = isset($_POST['idSupTextField']) ? $_POST['idSupTextField'] : 0;
             $requete = "DELETE FROM `labo` WHERE idlabo=$idASupprimer";
+                        	$requeteAffichage = "SELECT * FROM labo";
+	$commandeAffichage = mysqli_query($loginBDD, $requeteAffichage);
+    echo'<br><br>';
+	while($donnee = mysqli_fetch_assoc($commandeAffichage)){
+	echo "<br><b>idLabo</b>: " . $donnee['idLabo'] . " <b>TelLabo</b>: " . $donnee['telLabo'] . "<b> CourrielLabo</b>: " . $donnee['courrielLabo'];
+	}
             if (isset($_POST['ordreSuprression'])) {
                 $commande = mysqli_query($loginBDD, $requete);
                 echo "<br>Suppression labo avec id $idASupprimer OK<br><br>";

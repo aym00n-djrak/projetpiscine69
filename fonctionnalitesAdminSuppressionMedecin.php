@@ -2,16 +2,16 @@
 include "connexionBDD.php";
 echo "page suppression medecin <br>";
 if ($BDDTrouvee) {
-    echo "BDD existe";
+    //echo "BDD existe";
 
     $liste_id_medecins = array();
     $requeteAffichage = "SELECT * FROM medecin";
     $commandeAffichage = mysqli_query($loginBDD, $requeteAffichage);
     while ($donnee = mysqli_fetch_assoc($commandeAffichage)) {
-        echo "idMedecin: " . $donnee['idMedecin'] . '<br>';
+        //echo "idMedecin: " . $donnee['idMedecin'] . '<br>';
         array_push($liste_id_medecins, $donnee['idMedecin']);
     }
-    print_r($liste_id_medecins);
+    //print_r($liste_id_medecins);
     $taileListeIdMedecins = count($liste_id_medecins);
 }
 ?>
@@ -102,6 +102,12 @@ if ($BDDTrouvee) {
             //$idASupprimer = isset($_POST['medecinASupprimer']) ? $_POST['medecinASupprimer'] : 0;
             $idASupprimer = isset($_POST['idSupTextField']) ? $_POST['idSupTextField'] : 0;
             $requete = "DELETE FROM `medecin` WHERE idmedecin=$idASupprimer";
+            	$requeteAffichage = "SELECT * FROM medecin";
+	$commandeAffichage = mysqli_query($loginBDD, $requeteAffichage);
+	while($donnee = mysqli_fetch_assoc($commandeAffichage)){
+		echo "<br><b> Id:</b>" . $donnee['idMedecin']."<b> Nom:</b>" . $donnee['nomMedecin'] . " <b> Prenom: </b> " . $donnee['prenomMedecin']. " <b> Bureau: </b> " . $donnee['bureauMedecin']. " <b> Specialite: </b> " . $donnee['specialiteMedecin'];
+
+	}
             if (isset($_POST['ordreSuprression'])) {
                 $commande = mysqli_query($loginBDD, $requete);
                 echo "<br>Suppression medecin avec id $idASupprimer OK<br><br>";
