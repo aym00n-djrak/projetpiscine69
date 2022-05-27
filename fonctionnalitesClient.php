@@ -89,6 +89,7 @@
 		</table>
 
 		<form class="formulaireAjoutCompte" method="POST" action="http://localhost/projetpiscine69/fonctionnalitesClientAjoutCompteBancaire.php">
+			<br>
 			<p class="feature-title">VEUILLEZ SAISIR LES INFORMATIONS DU NOUVEAU COMPTE</p>
 			<table>
 				<tr>
