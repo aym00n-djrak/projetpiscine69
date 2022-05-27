@@ -54,10 +54,10 @@ if ($BDDTrouvee) {
                     <table>
                         <tr>
                             <!--Nom-->
-                            <td>Nom :</td>
+                            <td>Prenom :</td>
                             <td><input type="text" name="nomClient" /></td>
                             <!--Prenom-->
-                            <td>Prenom :</td>
+                            <td>Nom :</td>
                             <td><input type="text" name="prenomClient" /></td>
                         </tr>
                         <tr>

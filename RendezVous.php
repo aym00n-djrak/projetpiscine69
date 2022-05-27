@@ -43,12 +43,12 @@ include "connect.php" ?>
 
   <div class="container features">
     <form class="formulaireAjoutMedecin" method="POST" action="phprdvbdd/deleterdv.php">
-      <p class="Titre-Section">Liste de vos rendez-vous passez:</p>
+      <p class="Titre-Section">Liste de vos rendez-vous passés:</p>
       <?php
 
       $idClient = $_SESSION['idClient'];
 
-      $requeteSQL = "SELECT idCreneau, dateCreneau, heureCreneau, nomMedecin, salleLabo FROM `creneau`, `medecin`, `labo` WHERE dateCreneau<CURRENT_DATE() AND idClient=$idClient";
+      $requeteSQL = "SELECT * FROM `creneau`, `medecin`, `labo` WHERE idClient=$idClient";
       $executequery = mysqli_query($bdd_login, $requeteSQL);
 
 
