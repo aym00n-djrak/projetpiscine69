@@ -1,4 +1,4 @@
-<?php 
+<?php
 include "connexionBDD.php";
 echo "page paiement de service <br>";
 include "client.php";
@@ -18,7 +18,7 @@ $idClientActuel = $_SESSION['idClient'];
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="Accueil.css">
     <script type="text/javascript">
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('.header').height($(window).height());
         });
     </script>
@@ -45,39 +45,70 @@ $idClientActuel = $_SESSION['idClient'];
         </div>
     </nav>
 
- <form action="http://localhost/projetpiscine69/fonctionnalitesClient.php" name="boutonRetourForm"><input type="submit" class="boutonRetour" value="Retour" /> <br /> </form>
-    <form method = "POST">
-    Saisir id du service: <input name="idserviceSaisi" type="text"><br>
-    Saisir id du labo associe a ce service: <input name="idlaboAssocie" type="text"><br>
-    Saisir id de votre compte bancaire avec lequel vous payez:  <input name="idcomptePaiement" type="text"><br>
-    <input type="submit" name="ordrepaiement" value="Payer" />
-<?php
-if($BDDTrouvee){
-	echo "<br><br><br>BDD existe<br>";
-    
-if($BDDTrouvee){
-	$requeteAffichage = "SELECT * FROM servicelabo";
-	$commandeAffichage = mysqli_query($loginBDD, $requeteAffichage);
-	while($donnee = mysqli_fetch_assoc($commandeAffichage)){
-	echo "<b>Service</b> " . $donnee['nomServiceLabo'] . " avec <b>id</b> ". $donnee['idServiceLabo'] . " et <b>id labo associe</b> " . $donnee['idLabo'] . "<br>";
-	}
-    echo "<br>= = = = =<br>";
-	$requeteAffichage = "SELECT * from comptebancaire where idclient=$idClientActuel";
-	$commandeAffichage = mysqli_query($loginBDD, $requeteAffichage);
-	while($donnee = mysqli_fetch_assoc($commandeAffichage)){
-	echo "Compte avec id " . $donnee['idCompte'] . " de num�ro de carte  " . $donnee['numCarteCompte'] . '<br>';
-	}}
-    if(isset($_POST['ordrepaiement'])){
-    $idlabo = isset($_POST['idlaboAssocie']) ? $_POST['idlaboAssocie'] : "0";
-    $idcompte = isset($_POST['idcomptePaiement']) ? $_POST['idcomptePaiement'] : "0";
-    $idservice = isset($_POST['idserviceSaisi']) ? $_POST['idserviceSaisi'] : "0";
-	$requete = "INSERT INTO `hopital`.`paiement` (`idLabo`, `idCompte`, `idServiceLabo`) VALUES ('$idlabo', '$idcompte', '$idservice');";
-	$commande = mysqli_query($loginBDD, $requete);
-	echo "Paiement du service avec id $idservice du labo $idlabo avec le compte $idcompte OK<br><br>";
-    }
-}
-?>
-</form>
+    <div class="container features">
+
+        <p class="Titre-Section">Acheter un service</p>
+        <form action="http://localhost/projetpiscine69/fonctionnalitesClient.php" name="boutonRetourForm"><input type="submit" class="boutonRetour" value="Retour" /> <br /> </form>
+        <form method="POST">
+            <table>
+                <tr>
+                    <td>
+                        Saisir id du service:
+                    </td>
+                    <td>
+                        <input name="idserviceSaisi" type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Saisir id du labo associe a ce service:
+                    </td>
+                    <td>
+                        <input name="idlaboAssocie" type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Saisir id de votre compte bancaire avec lequel vous payez:
+                    </td>
+                    <td>
+                        <input name="idcomptePaiement" type="text">
+                    </td>
+                </tr>
+            </table>
+
+
+
+            <input type="submit" name="ordrepaiement" value="Payer" />
+            <?php
+            if ($BDDTrouvee) {
+                echo "<br><br><br>BDD existe<br>";
+
+                if ($BDDTrouvee) {
+                    $requeteAffichage = "SELECT * FROM servicelabo";
+                    $commandeAffichage = mysqli_query($loginBDD, $requeteAffichage);
+                    while ($donnee = mysqli_fetch_assoc($commandeAffichage)) {
+                        echo "<b>Service</b> " . $donnee['nomServiceLabo'] . " avec <b>id</b> " . $donnee['idServiceLabo'] . " et <b>id labo associe</b> " . $donnee['idLabo'] . "<br>";
+                    }
+                    echo "<br>= = = = =<br>";
+                    $requeteAffichage = "SELECT * from comptebancaire where idclient=$idClientActuel";
+                    $commandeAffichage = mysqli_query($loginBDD, $requeteAffichage);
+                    while ($donnee = mysqli_fetch_assoc($commandeAffichage)) {
+                        echo "Compte avec id " . $donnee['idCompte'] . " de num�ro de carte  " . $donnee['numCarteCompte'] . '<br>';
+                    }
+                }
+                if (isset($_POST['ordrepaiement'])) {
+                    $idlabo = isset($_POST['idlaboAssocie']) ? $_POST['idlaboAssocie'] : "0";
+                    $idcompte = isset($_POST['idcomptePaiement']) ? $_POST['idcomptePaiement'] : "0";
+                    $idservice = isset($_POST['idserviceSaisi']) ? $_POST['idserviceSaisi'] : "0";
+                    $requete = "INSERT INTO `hopital`.`paiement` (`idLabo`, `idCompte`, `idServiceLabo`) VALUES ('$idlabo', '$idcompte', '$idservice');";
+                    $commande = mysqli_query($loginBDD, $requete);
+                    echo "Paiement du service avec id $idservice du labo $idlabo avec le compte $idcompte OK<br><br>";
+                }
+            }
+            ?>
+        </form>
+    </div>
 
     <footer class="page-footer">
 
@@ -85,9 +116,7 @@ if($BDDTrouvee){
 
             <div class="col-lg-8 col-md-8 col-sm-20">
 
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7008.822583384912!2d2.2823564991389347!3d48.851686907281966!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6701b4f58251b%3A0x167f5a60fb94aa76!2sECE%20Paris%20Lyon!5e0!3m2!1sfr!2sfr!4v1653309618172!5m2!1sfr!2sfr"
-                        width="100%" height="100%" style="border:0" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7008.822583384912!2d2.2823564991389347!3d48.851686907281966!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6701b4f58251b%3A0x167f5a60fb94aa76!2sECE%20Paris%20Lyon!5e0!3m2!1sfr!2sfr!4v1653309618172!5m2!1sfr!2sfr" width="100%" height="100%" style="border:0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
             </div>
 
