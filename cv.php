@@ -21,6 +21,15 @@ if ($BDDTrouvee) {
 	}
 }
 ?>
+<html>
+<head>
+  <title>CV</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="Accueil.css">
+
+</head>
+</html>
 
 <?xml version="1.0" encoding ="utf-8"?>
 <!DOCTYPE cvs SYSTEM >

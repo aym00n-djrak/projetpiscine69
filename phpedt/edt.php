@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Omnes Santé</title>
+    <title>Omnes Sante</title>
     <link rel="stylesheet" type="text/css" href="http://localhost/projetpiscine69//Accueil.css">
     <style type="text/css">
         caption {
@@ -13,22 +13,15 @@
 
         table {
             margin: auto;
-            border: 2px solid black;
+            border: 3px solid midnightblue;
+            border-collapse: collapse;
         }
 
+        td,
+        tr,
         th {
             margin: auto;
-            border: 1px solid red;
-        }
-
-        tr {
-            margin: auto;
-            border: 1px solid blue;
-        }
-
-        td {
-            margin: auto;
-            border: 1px solid orange;
+            border: 2px solid midnightblue;
         }
     </style>
 
@@ -39,8 +32,8 @@
 
         <div id="edt">
             <?php
-           
-            $Docteur=$nomDocteur.", ".$prenomDocteur;
+
+            $Docteur = $nomDocteur . ", " . $prenomDocteur;
 
             //tout les creneaux réservé
             $creneau;
@@ -60,8 +53,8 @@
             $heureAM = array("08:00", "08:20", "08:40", "09:00", "09:20", "09:40", "10:00", "10:20", "10:40", "11:00", "11:20", "11:40", "12:00");
             $heurePM = array("14:00", "14:20", "14:40", "15:00", "16:20", "16:40", "17:00", "17:20", "18:40", "19:00", "19:20", "19:40", "20:00");
 
-            echo "<tr><th>Spécialité</th>";
-            echo "<th>Médecin</th>";
+            echo "<tr><th>Specialite</th>";
+            echo "<th>Medecin</th>";
 
             for ($i = 0; $i < count($jour); $i++) {
                 echo "<th colspan=\"2\">" . $jour[$i] . "</th>";
@@ -75,7 +68,7 @@
                 echo "<th rowspan=\"30\">" . $medecin[$j] . "</th>";
 
             for ($j = 2; $j < count($matin_soir); $j++) {
-                echo "<td >" . $matin_soir[$j] . "</td>";
+                echo "<td>" . $matin_soir[$j] . "</td>";
             }
             echo "</tr>"; //MATINSOIR
             echo "</tr>"; //MED
