@@ -49,6 +49,7 @@ include "connect.php" ?>
       $idClient = $_SESSION['idClient'];
 
       $requeteSQL = "SELECT * FROM `creneau`, `medecin`, `labo` WHERE idClient=$idClient";
+
       $executequery = mysqli_query($bdd_login, $requeteSQL);
 
 
