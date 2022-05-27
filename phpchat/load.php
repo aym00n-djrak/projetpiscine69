@@ -1,7 +1,7 @@
 <?php
 include "connect.php";
 
-$requeteSQL = "SELECT * FROM `messagerie`";
+$requeteSQL = "SELECT * FROM `message`";
 $executequery = mysqli_query($bdd_login, $requeteSQL);
 
 while($donnee= mysqli_fetch_assoc($executequery)){
