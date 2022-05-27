@@ -33,7 +33,7 @@
 				<li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
 				<li class="nav-item"><a class="nav-link" href="Parcours.html">Tout parcourir</a></li>
 				<li class="nav-item"><a class="nav-link" href="Recherche.html">Recherche</a></li>
-                <li class="nav-item"><a class="nav-link" href="RendezVous.php">Rendez-vous</a></li>
+				<li class="nav-item"><a class="nav-link" href="RendezVous.php">Rendez-vous</a></li>
 				<li class="nav-item"><a class="nav-link" href="Compte.html">Votre compte</a></li>
 			</ul>
 		</div>
@@ -41,65 +41,102 @@
 	<div class="container features">
 
 		<p class="Titre-Section">Bienvenue dans votre espace administrateur</p>
-		<table>
-			<tr>
-				<td>
-					<form name="boutonAjout">
-						<input type="button" class="btnform" value="Ajouter un medecin"
-							onclick="affichageFormulaireAjoutMedecin()" />
-					</form>
-				</td>
-				<td>
-					<form action="http://localhost/projetpiscine69/fonctionnalitesAdminSuppressionMedecin.php"
-						name="boutonSupprimerForm">
-						<input type="submit" class="btnform" value="Supprimer un medecin" />
-					</form>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<form action="http://localhost/projetpiscine69/fonctionnalitesAdminModifMedecin.php"
-						name="boutonModifForm">
-						<input type="submit" class="btnform" value="Modifier un medecin" />
-					</form>
-				</td>
-				<td>
-					<form name="boutonAjoutLabo">
-						<input type="button" class="btnform" value="Ajouter un laboratoire"
-							onclick="affichageFormulaireAjoutLabo()" />
-					</form>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<form action="http://localhost/projetpiscine69/fonctionnalitesAdminSuppressionLabo.php"
-						name="boutonSupprimerLabo">
-						<input type="submit" class="btnform" value="Supprimer un laboratoire" />
-					</form>
-				</td>
-				<td>
-					<form action="http://localhost/projetpiscine69/fonctionnalitesAdminModifLabo.php"
-						name="boutonModifLaboForm">
-						<input type="submit" class="btnform" value="Modifier un laboratoire" />
-					</form>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<form action="http://localhost/projetpiscine69/fonctionnalitesAdminAjoutService.php"
-						name="boutonAjoutServiceForm">
-						<input type="submit" class="btnform" value="Associer un nouveau service e un laboratoire" />
-					</form>
-				</td>
-				<td>
-					<form action="http://localhost/projetpiscine69/fonctionnalitesAdminSuppressionService.php"
-						name="boutonSupprimerService">
-						<input type="submit" class="btnform" value="Supprimer un service d'un laboratoire" />
-					</form>
-				</td>
-			</tr>
-		</table>
+		<div class="row">
+			<div class="col-lg-4 col-md-6 col-sm-12">
+				<table>
+					<tr>
+						<td>
+							<b>Medecin</b>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<form name="boutonAjout">
+								<input type="button" class="btnform" value="Ajouter un medecin"
+									onclick="affichageFormulaireAjoutMedecin()" />
+							</form>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<form action="http://localhost/projetpiscine69/fonctionnalitesAdminModifMedecin.php"
+								name="boutonModifForm">
+								<input type="submit" class="btnform" value="Modifier un medecin" />
+							</form>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<form action="http://localhost/projetpiscine69/fonctionnalitesAdminSuppressionMedecin.php"
+								name="boutonSupprimerForm">
+								<input type="submit" class="btnform" value="Supprimer un medecin" />
+							</form>
+						</td>
 
+					</tr>
+
+				</table>
+			</div>
+			<div class="col-lg-4 col-md-6 col-sm-12">
+				<table>
+					<tr>
+						<td>
+							<b>Laboratoire</b>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<form name="boutonAjoutLabo">
+								<input type="button" class="btnform" value="Ajouter un laboratoire"
+									onclick="affichageFormulaireAjoutLabo()" />
+							</form>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<form action="http://localhost/projetpiscine69/fonctionnalitesAdminModifLabo.php"
+								name="boutonModifLaboForm">
+								<input type="submit" class="btnform" value="Modifier un laboratoire" />
+							</form>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<form action="http://localhost/projetpiscine69/fonctionnalitesAdminSuppressionLabo.php"
+								name="boutonSupprimerLabo">
+								<input type="submit" class="btnform" value="Supprimer un laboratoire" />
+							</form>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="col-lg-4 col-md-6 col-sm-12">
+				<table>
+					<tr>
+						<td>
+							<b>Service d'un laboratoire</b>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<form action="http://localhost/projetpiscine69/fonctionnalitesAdminAjoutService.php"
+								name="boutonAjoutServiceForm">
+								<input type="submit" class="btnform"
+									value="Associer un nouveau service d'un laboratoire" />
+							</form>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<form action="http://localhost/projetpiscine69/fonctionnalitesAdminSuppressionService.php"
+								name="boutonSupprimerService">
+								<input type="submit" class="btnform" value="Supprimer un service d'un laboratoire" />
+							</form>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
 		<form class="formulaireAjoutMedecin" method="POST"
 			action="http://localhost/projetpiscine69/fonctionnalitesAdminAjoutMedecin.php">
 			<br>
@@ -186,7 +223,7 @@
 						<p>Url Image du Medecin:</p>
 					</td>
 					<td>
-						<textarea  name="image"></textarea>
+						<textarea name="image"></textarea>
 					</td>
 				</tr>
 				<tr>
