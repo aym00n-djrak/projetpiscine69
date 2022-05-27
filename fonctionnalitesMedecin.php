@@ -63,8 +63,6 @@ if ($BDDTrouvee) {
                         </select>
 
                     </td>
-
-                    <?php   ?>
                 </tr>
                 <tr>
                     <!--Liste rendez-vous a venir-->
@@ -96,7 +94,9 @@ if ($BDDTrouvee) {
                             <input type="button" name="boutonVisio" value="Visio avec ce client">
                         </a>
                     </td>
-                    <td><input type="button" name="boutonMail" value="Envoi mail automatique au client"> </td>
+
+                    <td><a href="mailto: "><input type="button" name="boutonMail" value="Envoi mail au client"> </a>
+                    </td>
                     <td><input type="submit" name="boutonfin" value="Finir le rendez-vous"> </td>
                 </tr>
             </table>

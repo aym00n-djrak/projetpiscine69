@@ -3,6 +3,7 @@ include "connect.php";
 
 $tabidclient=array();
 $tabnomclient=array();
+$tabmailclient=array();
 
 
 $requeteSQL = "SELECT * FROM `client`";
