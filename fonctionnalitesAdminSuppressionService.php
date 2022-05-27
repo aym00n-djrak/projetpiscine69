@@ -104,14 +104,14 @@ if ($BDDTrouvee) {
                 $commande = mysqli_query($loginBDD, $requete);
                 echo "<br>Suppression de ce service du labo avec idservice $idASupprimer OK<br><br>";
             }
-                                        $requeteliste = "select distinct nomservicelabo, idlabo from servicelabo order by idlabo;";
+                //$requeteliste = "select distinct nomservicelabo, idlabo from servicelabo order by idlabo;";
+                $requeteliste = "select * from servicelabo;";
                 $commande = mysqli_query($loginBDD, $requeteliste);
                 while($donnee = mysqli_fetch_assoc($commande)){
-                echo "<br><b> Labo</b>" . $donnee['idlabo'] . " <b> propose </b> " . $donnee['nomservicelabo'];}
+                echo "<br><b> Labo</b>" . $donnee['idLabo'] . " <b> propose </b> " . $donnee['nomServiceLabo']." <b>id de ce service</b>:" . $donnee['idServiceLabo'];}
             ?>
         </form>
     </div>
-    >>>>>>> charlesMain
 
     <footer class="page-footer">
 
