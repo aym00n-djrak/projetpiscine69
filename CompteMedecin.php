@@ -47,7 +47,7 @@ if($BDDTrouvee){
     </nav>
     <form class="formulaireLoginMedecin" method="POST">
     <div class="container features">
-        <p class="Titre-Section">Connexion</p>
+        <p class="Titre-Section">Connexion medecin</p>
         <table>
             <tr>
                 <!--Nom-->
@@ -81,7 +81,9 @@ if(isset($_POST['loginEspaceMedecin'])){
 	$requete = "SELECT * FROM `medecin` where(nommedecin = '$nom' and prenommedecin = '$prenom' and courrielmedecin = '$courriel');";
 	$commande = mysqli_query($loginBDD, $requete);
 	$resultat = "on sait pas encore"; $donnee = mysqli_fetch_assoc($commande);
-	if($donnee['idAdmin']!=null){$resultat="Connexion réussie";} else{$resultat="Aucun médecin trouvé";}
+	if($donnee['idAdmin']!=null){$resultat="Connexion reussie";
+    echo "<script> window.location = 'http://localhost/projetpiscine69/fonctionnalitesMedecin.php' </script>";
+    } else{$resultat="Aucun medecin trouve";}
 	echo "<br>Resultat identification: $resultat<br><br>";
 	}
 ?>

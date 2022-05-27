@@ -4,18 +4,6 @@ echo "page paiement de service <br>";
 include "client.php";
 $idClientActuel = $_SESSION['idClient'];
 
-if($BDDTrouvee){
-	$requeteAffichage = "SELECT * FROM servicelabo";
-	$commandeAffichage = mysqli_query($loginBDD, $requeteAffichage);
-	while($donnee = mysqli_fetch_assoc($commandeAffichage)){
-	echo "Service " . $donnee['nomServiceLabo'] . " avec id ". $donnee['idServiceLabo'] . " et id labo associe " . $donnee['idLabo'] . "<br>";
-	}
-    echo "<br>= = = = =<br>";
-	$requeteAffichage = "SELECT * from comptebancaire where idclient=$idClientActuel";
-	$commandeAffichage = mysqli_query($loginBDD, $requeteAffichage);
-	while($donnee = mysqli_fetch_assoc($commandeAffichage)){
-	echo "Compte avec id " . $donnee['idCompte'] . " de num�ro de carte  " . $donnee['numCarteCompte'] . '<br>';
-	}}
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +53,20 @@ if($BDDTrouvee){
     <input type="submit" name="ordrepaiement" value="Payer" />
 <?php
 if($BDDTrouvee){
-	echo "BDD existe<br>";
+	echo "<br><br><br>BDD existe<br>";
+    
+if($BDDTrouvee){
+	$requeteAffichage = "SELECT * FROM servicelabo";
+	$commandeAffichage = mysqli_query($loginBDD, $requeteAffichage);
+	while($donnee = mysqli_fetch_assoc($commandeAffichage)){
+	echo "<b>Service</b> " . $donnee['nomServiceLabo'] . " avec <b>id</b> ". $donnee['idServiceLabo'] . " et <b>id labo associe</b> " . $donnee['idLabo'] . "<br>";
+	}
+    echo "<br>= = = = =<br>";
+	$requeteAffichage = "SELECT * from comptebancaire where idclient=$idClientActuel";
+	$commandeAffichage = mysqli_query($loginBDD, $requeteAffichage);
+	while($donnee = mysqli_fetch_assoc($commandeAffichage)){
+	echo "Compte avec id " . $donnee['idCompte'] . " de num�ro de carte  " . $donnee['numCarteCompte'] . '<br>';
+	}}
     if(isset($_POST['ordrepaiement'])){
     $idlabo = isset($_POST['idlaboAssocie']) ? $_POST['idlaboAssocie'] : "0";
     $idcompte = isset($_POST['idcomptePaiement']) ? $_POST['idcomptePaiement'] : "0";

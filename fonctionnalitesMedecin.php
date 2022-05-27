@@ -1,6 +1,6 @@
 <?php
 include "connexionBDD.php";
-echo "page connexion admin
+echo "page fonctionnalites medecin
 <br>";
 if($BDDTrouvee){
 	echo "BDD existe";
@@ -8,7 +8,7 @@ if($BDDTrouvee){
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
     <title>Parcours</title>
@@ -45,50 +45,28 @@ if($BDDTrouvee){
             </ul>
         </div>
     </nav>
-    <form class="formulaireLoginAdmin" method="POST">
+    <form class="formulaireLoginMedecin" method="POST">
     <div class="container features">
-        <p class="Titre-Section">Connexion admin</p>
+        <p class="Titre-Section">Connexion medecin</p>
         <table>
             <tr>
-                <!--Nom-->
-                <td>Nom </td>
-                <td><input type="text" name="nomAdmin" /></td>
+                <!--Liste dossiers clients = rendez-vous finis-->
+                <td>Liste dossiers clients: </td>
             </tr>
             <tr>
-                <!--Prenom-->
-                <td>Prenom </td>
-                <td><input type="text" name="prenomAdmin" /></td>
+                <!--Liste rendez-vous a venir-->
+                <td>Liste consultations a venir: </td>
             </tr>
             <tr>
-                <!--Courriel-->
-                <td>Courriel </td>
-                <td><input type="email" name="courrielAdmin" /></td>
-            </tr>
-            <tr>
-                <!--Bouton de validation-->
-                <td colspan="2" align="center">
-                   <input type="submit" class="submitform" name="loginEspaceAdmin" value="Se connecter" text-align="center"/>
-                </td>
+                <!--Fonctionnalités-->
+                <td>Choisir un patient: <select name="choixClient"><option id=1>client1</option><option id=2>client2</option></select> </td>
+                <td><input type="button" name = "boutonChat" value="Chatter avec ce client"> </td>
+                <td><input type="button" name = "boutonVisio" value="Visio avec ce client"> </td>
+                <td><input type="button" name = "boutonMail" value="Envoi mail automtaique au client"> </td>
             </tr>
         </table>
     </div>
-    <?php
-if(isset($_POST['loginEspaceAdmin'])){
-	$nom = isset($_POST['nomAdmin']) ? $_POST['nomAdmin'] : " "; 
-	$prenom = isset($_POST['prenomAdmin']) ? $_POST['prenomAdmin'] : " "; 
-	$courriel = isset($_POST['courrielAdmin']) ? $_POST['courrielAdmin'] : " ";
-	
-	$requete = "SELECT * FROM `admin` where (nomadmin = '$nom' and prenomadmin = '$prenom' and courrieladmin = '$courriel');";
-	$commande = mysqli_query($loginBDD, $requete);
-	$resultat = "on sait pas encore"; $donnee = mysqli_fetch_assoc($commande);
-	if($donnee['idAdmin']!=null){$resultat="Connexion reussie"; sleep(1); echo "<script> window.location = 'http://localhost/projetpiscine69/fonctionnalitesAdmin.html' </script>";}
-    else{$resultat="Aucun admin trouve";}
-	echo "<br>Resultat identification: $resultat<br><br>";
-}
-?>
     </form>
-    </form>
-
 
     <footer class="page-footer">
 

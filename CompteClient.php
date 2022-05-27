@@ -48,7 +48,7 @@ if ($BDDTrouvee) {
     </nav>
     <form class="formulaireLoginClient" method="POST">
         <div class="container features">
-            <p class="Titre-Section">Connexion</p>
+            <p class="Titre-Section">Connexion client</p>
             <div class="row">
                 <div class="col-lg-8 col-md-8 col-sm-12">
                     <table>
