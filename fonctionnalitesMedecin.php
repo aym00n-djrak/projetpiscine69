@@ -4,11 +4,6 @@ include "phprdvpasfini/loadrdv.php";
 include "phprdvfini/loadrdv.php";
 include "phpclient/loadclient.php";
 
-echo "page fonctionnalites medecin
-<br>";
-if ($BDDTrouvee) {
-    echo "BDD existe";
-}
 ?>
 
 <!DOCTYPE html>
@@ -87,6 +82,11 @@ if ($BDDTrouvee) {
                     <td>
                         <a href="phpchat/chat.html">
                             <input type="button" name="boutonChat" value="Chatter avec ce client">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="viderlechat.php">
+                            <input type="button" name="viderboutonChat" value="Supprimer la discussion avec ce client">
                         </a>
                     </td>
                     <td>
