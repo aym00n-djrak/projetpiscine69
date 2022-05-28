@@ -73,6 +73,7 @@ ul {
 
 .btnMed {
     min-width: 300px;
+    margin-top: 10px;
 }
 
 .btnImg:hover {
