@@ -20,4 +20,9 @@ while($donnee= mysqli_fetch_assoc($executequery)){
      array_push($tabheurerdv,$heureCreneau);
     }
 
+
+    for($i=0;$i<COUNT($tabidrdv);$i++)
+    {
+        echo $tabidrdv[$i]. "<br>";
+    }
 ?>

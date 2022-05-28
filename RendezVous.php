@@ -42,48 +42,40 @@ include "connect.php" ?>
 
 
   <div class="container features">
-    <form class="formulaireAjoutMedecin" method="POST" action="phprdvbdd/deleterdv.php">
-      <p class="Titre-Section">Liste de vos rendez-vous passés:</p>
-      <?php
-
-      $idClient = $_SESSION['idClient'];
-
-      $requeteSQL = "SELECT * FROM `creneau`, `medecin`, `labo` WHERE idClient=$idClient";
-
-      $executequery = mysqli_query($bdd_login, $requeteSQL);
+    <form class="formulaireAjoutMedecin" method="POST" action="supprimerrdv.php">
+      <table>
+        <!--Liste rendez-vous a venir-->
+        <td>Liste consultations a venir:
+          <select name="choixdossierClient">
 
 
-      while ($donnee = mysqli_fetch_assoc($executequery)) {
+            <?php
 
+            $idClient = $_SESSION['idClient'];
+
+            $requeteSQL = "SELECT * FROM `creneau` WHERE idClient=$idClient";
+
+            $executequery = mysqli_query($bdd_login, $requeteSQL);
+
+
+            while ($donnee = mysqli_fetch_assoc($executequery)) {
+              $idCreneau = $donnee['idCreneau'];
+              $dateCreneau = $donnee['dateCreneau'];
+              $heureCreneau = $donnee['heureCreneau'];
+            ?>
+
+              <option id=<?php echo $idCreneau; ?>><?php echo $dateCreneau . " a " . $heureCreneau; ?></option>
+
+        <?php
+
+            }
         ?>
-          <table>
-            <tr>
-              <!--Nom-->
-              <td>Rendez-vous avec le docteur</td>
-              <td><?php echo $nomMedecin = $donnee['nomMedecin']; ?></td>
-            </tr>
-            <tr>
-              <!--Creneau-->
-              <td>Creneau :</td>
-              <td><?php echo $heureCreneau = $donnee['heureCreneau']; ?></td>
-            </tr>
-            <tr>
-              <!--Heure-->
-              <td>Heure :</td>
-              <td><?php echo $dateCreneau = $donnee['dateCreneau']; ?></td>
-            </tr>
-            <tr>
-              <!--Salle-->
-              <td>Salle :</td>
-              <td><?php echo $salleLabo = $donnee['salleLabo']; ?></td>
-            </tr>
-          </table>
-
-      <?php
-        
-      }
-      ?>
-
+          </select>
+        </td>
+        <tr>
+          <td><input type="submit" name="bouton" value="Supprimer le rendez-vous"> </td>
+        </tr>
+      </table>
     </form>
   </div>
 
