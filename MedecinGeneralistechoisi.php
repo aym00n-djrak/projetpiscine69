@@ -113,7 +113,7 @@
                         </td>
                         <!--Message Vocal-->
                         <td>
-                            <a href="https://aym00n-djrak.github.io/videocall/">
+                            <a href="https://aym00n-djrak.github.io/videocall/#45eddd">
                                 <input type="button" name="Message Vocal" value="Message Vocal" text-align="center" class="btngeneraliste">
                             </a>
                         </td>

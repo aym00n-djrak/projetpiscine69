@@ -90,7 +90,7 @@ include "phpclient/loadclient.php";
                         </a>
                     </td>
                     <td>
-                        <a href="https://aym00n-djrak.github.io/videocall/">
+                        <a href="https://aym00n-djrak.github.io/videocall/#45eddd">
                             <input type="button" name="boutonVisio" value="Visio avec ce client">
                         </a>
                     </td>
