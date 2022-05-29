@@ -39,13 +39,13 @@ if ($BDDTrouvee) {
 		<etatcivil><?php echo"
 <style>
 table, th, td {
-  border:1px solid black;
-  background-color: yellow;
+  border:1px solid midnightblue;
+  background-color: dodgerblue;
   font-size: larger;
-  border-color: green;
-      border-bottom: 1px solid #dddddd;
-border-bottom: 2px solid #009879;
-  box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+  border-color: midnightblue;
+      border-bottom: 1px solid midnightblue;
+border-bottom: 2px solid midnightblue;
+  box-shadow: midnightblue -1px 1px, midnightblue -2px 2px, midnightblue -3px 3px;
 
 }
 </style>"?>
