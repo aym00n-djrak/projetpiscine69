@@ -37,7 +37,6 @@
                 //CLIENT
 
                 $idClient = $_SESSION['idClient'];
-                echo "Le client est :".$idClient;
 
                 //MEDECIN
                 $idMedecin = $iddoc;

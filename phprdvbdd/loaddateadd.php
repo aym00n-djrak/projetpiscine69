@@ -44,7 +44,7 @@ $heurecreneau=array();
 
 for($i=0;$i<COUNT($jour);$i++)
 {
-    $requeteSQL = "SELECT heureCreneau, dateCreneau FROM `creneau` WHERE dateCreneau = '$jour[$i]' AND idMedecin=$iddoc AND idLabo=$idlab";
+    $requeteSQL = "SELECT heureCreneau, dateCreneau FROM `creneau` WHERE dateCreneau = '$jour[$i]' AND idMedecin=$iddoc";
     $executequery = mysqli_query($bdd_login, $requeteSQL);
 
 
@@ -59,14 +59,6 @@ while($donnee= mysqli_fetch_assoc($executequery)){
 
     }
 }
-
-for($i=0;$i<COUNT($creneau);$i++)
-echo $creneau[$i]."<br>";
-for($i=0;$i<COUNT($heureres);$i++)
-echo $heureres[$i]."<br>";
-
-for($i=0;$i<COUNT($heurecreneau);$i++)
-echo $heurecreneau[$i]."<br>";
 
 include "edtadd.php";
 

@@ -45,7 +45,8 @@ include "connect.php" ?>
     <form class="formulaireAjoutMedecin" method="POST" action="supprimerrdv.php">
       <table>
         <!--Liste rendez-vous a venir-->
-        <td>Liste de vos consultations a venir:
+        <td> <h1> Liste de vos consultations a venir: </h1>
+        <br>
           <select name="choixdossierClient">
 
 

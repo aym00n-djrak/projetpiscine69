@@ -46,7 +46,7 @@ $heurecreneau=array();
 
 for($i=0;$i<COUNT($jour);$i++)
 {
-$requeteSQL = "SELECT heureCreneau, dateCreneau FROM `creneau` WHERE dateCreneau = '$jour[$i]' AND idMedecin=$iddoc AND idLabo=$idlab";
+$requeteSQL = "SELECT heureCreneau, dateCreneau FROM `creneau` WHERE dateCreneau = '$jour[$i]' AND idMedecin=$iddoc ";
 $executequery = mysqli_query($bdd_login, $requeteSQL);
 
 
