@@ -7,7 +7,6 @@
     margin-left: 1%;
     display: flex;
     align-items: center;
-    /*margin: auto;*/
     max-width: fit-content;
     border: solid;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -479,6 +478,10 @@ input[type=text] {
 
 tr{
     height: 40px;
+}
+
+.pp{
+    border-radius: 50%;
 }
 
 /***************PPPIIIMMMPPPP*********************/

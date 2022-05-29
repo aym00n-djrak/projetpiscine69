@@ -132,8 +132,8 @@
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-12">
-                <img src="<?php echo $tabimage[$doc]; ?>" class="img-fluid">
-                <iframe src="<?php echo $tabvideo[$doc] ?>">
+                <img src="<?php echo $tabimage[$doc]; ?>" class="pp">
+                <iframe src="<?php echo $tabvideo[$doc] ?>" >
             </div>
         </div>
 
