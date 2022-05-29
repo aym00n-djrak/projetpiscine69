@@ -82,7 +82,9 @@ if ($BDDTrouvee) {
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td>		<!-- tentative de recuperation du nombre exact de resultats par rapport a la requete liste labo partiellement aboutie -->
+                    		<!-- proposition d'option alternative pour supprimer un service deja propose par un laboratoire existant dans la base de donnees -->
+
                         Option alternative: saisir l'id du service associe e un laboratoire que vous voulez supprimer:
                     </td>
                     <td>

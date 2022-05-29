@@ -60,7 +60,8 @@ if ($BDDTrouvee) {
 
 			<table>
 				<tr>
-					<td>
+					<td>		<!-- choix du medecin a modifier -->
+
 						VEUILLEZ CHOISIR LE MEDECIN A MODIFIER:
 					</td>
 					<td>
@@ -72,7 +73,9 @@ if ($BDDTrouvee) {
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<td>		<!-- tentative d'affichage direct des medecins de la bdd dans la liste deroulante partiellement aboutie -->
+							<!-- on propose de saisir directement l'identifiant du medecin a modifier -->
+
 						Option alternative: saisir l'id du medecin e modifier:
 					</td>
 					<td>
@@ -80,6 +83,7 @@ if ($BDDTrouvee) {
 					</td>
 				</tr>
 			</table>
+					<!-- saisie d'informations a modifier pour le medecin choisi -->
 
 			<p class="feature-title">VEUILLEZ SAISIR LES INFORMATIONS A MODIFIER </p>
 

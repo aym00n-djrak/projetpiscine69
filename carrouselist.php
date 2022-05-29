@@ -1,4 +1,5 @@
-<?php 
+<?php
+//connexion bdd
 include "connexionBDD.php";
 ?>
 
@@ -46,8 +47,8 @@ include "connexionBDD.php";
 
 <?php
 if($BDDTrouvee){
-
-	echo "Liste des medecins pour cette specialite: OK<br><br>";
+// affichage liste medecins pour specialite demandee
+	echo "Liste des medecins pour cette specialite: <br><br>";
     $requeteAffichage = "SELECT * FROM `medecin` WHERE specialitemedecin = 'ist'";
 	$commandeAffichage = mysqli_query($loginBDD, $requeteAffichage);
 	while($donnee = mysqli_fetch_assoc($commandeAffichage)){

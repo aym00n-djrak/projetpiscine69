@@ -77,6 +77,7 @@ $idClientActuel = $_SESSION['idClient'];
                 </tr>
             </table>
 
+            		<!-- on affiche les comptes bancaires dont le client dispose et on lui propose de choisir celui avec lequel il souhaite payer un service associe a un laboratoire -->
 
 
             <input type="submit" name="ordrepaiement" value="Payer" />

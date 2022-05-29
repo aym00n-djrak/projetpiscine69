@@ -46,8 +46,9 @@ include "connexionBDD.php";
 
 <?php
 if($BDDTrouvee){
+// affichage liste medecins pour specialite demandee
 
-	echo "Liste des medecins pour cette specialite: OK<br><br>";
+	echo "Liste des medecins pour cette specialite: <br><br>";
     $requeteAffichage = "SELECT * FROM `medecin` WHERE specialitemedecin = 'gynecologie'";
 	$commandeAffichage = mysqli_query($loginBDD, $requeteAffichage);
 	while($donnee = mysqli_fetch_assoc($commandeAffichage)){

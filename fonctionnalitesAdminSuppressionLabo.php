@@ -82,7 +82,9 @@ if ($BDDTrouvee) {
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td>		<!-- tentative de recuperation du nombre de laboratoires dans la liste deroulante partiellement aboutie -->
+                    		<!-- on propose de saisir l'id du laboratoire apres un affichage rapide de tous les laboratoires qu'on peut supprimer -->
+
                         Option alternative: saisir l'id du laboratoire e supprimer:
                     </td>
                     <td>

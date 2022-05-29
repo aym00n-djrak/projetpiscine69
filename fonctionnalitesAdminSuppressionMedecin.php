@@ -84,7 +84,9 @@ if ($BDDTrouvee) {
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td>		<!-- tentative de recuperation sur liste deroulante partiellement aboutie,  -->
+                    		<!-- proposition de supression d'un medecin en temps reel apres afficahge de la liste des medecins et saisie de l'id du medecin qu'on souhaite eliminer -->
+
                         Option alternative: saisir l'id du medecin e supprimer:
                     </td>
                     <td>

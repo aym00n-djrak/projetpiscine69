@@ -6,6 +6,7 @@ if ($BDDTrouvee) {
 }
 ?>
 
+		<!-- requete de comparaison pour la connexion de l'administrateur -->
 
 <?php
 if (isset($_POST['loginEspaceAdmin'])) {
@@ -18,10 +19,10 @@ if (isset($_POST['loginEspaceAdmin'])) {
 	$resultat = "on sait pas encore";
 	$donnee = mysqli_fetch_assoc($commande);
 	if ($donnee['idAdmin'] != null) {
-		$resultat = "Connexion reussie";
+		$resultat = "Connexion reussie";//l'administrateur existe dans la base de donnes
 	} else {
-		$resultat = "Aucun client trouve";
+		$resultat = "Aucun admin trouve";//aucun administrateur ne correspond aux informations saisies, l'acces a l'espace administrateur est donc refuse
 	}
-	echo "<br>requete formulee $requete";
+	//echo "<br>requete formulee $requete";
 	echo "<br>Resultat identification: $resultat<br><br>";
 }

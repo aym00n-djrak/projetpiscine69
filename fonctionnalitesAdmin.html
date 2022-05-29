@@ -39,6 +39,7 @@
 		</div>
 	</nav>
 	<div class="container features">
+		<!-- page des fonctionnalites administrateur-->
 
 		<p class="Titre-Section">Bienvenue dans votre espace administrateur</p>
 		<div class="row">
@@ -46,6 +47,8 @@
 				<table>
 					<tr>
 						<td>
+							<!-- fonctionnalites liees au medecin -->
+
 							<b>Medecin</b>
 						</td>
 					</tr>
@@ -53,14 +56,14 @@
 						<td>
 							<form name="boutonAjout">
 								<input type="button" class="btnform" value="Ajouter un medecin"
-									onclick="affichageFormulaireAjoutMedecin()" />
+									   onclick="affichageFormulaireAjoutMedecin()" />
 							</form>
 						</td>
 					</tr>
 					<tr>
 						<td>
 							<form action="http://localhost/projetpiscine69/fonctionnalitesAdminModifMedecin.php"
-								name="boutonModifForm">
+								  name="boutonModifForm">
 								<input type="submit" class="btnform" value="Modifier un medecin" />
 							</form>
 						</td>
@@ -68,7 +71,7 @@
 					<tr>
 						<td>
 							<form action="http://localhost/projetpiscine69/fonctionnalitesAdminSuppressionMedecin.php"
-								name="boutonSupprimerForm">
+								  name="boutonSupprimerForm">
 								<input type="submit" class="btnform" value="Supprimer un medecin" />
 							</form>
 						</td>
@@ -81,6 +84,8 @@
 				<table>
 					<tr>
 						<td>
+							<!-- fonctionnalites liees au laboratoire -->
+
 							<b>Laboratoire</b>
 						</td>
 					</tr>
@@ -88,14 +93,14 @@
 						<td>
 							<form name="boutonAjoutLabo">
 								<input type="button" class="btnform" value="Ajouter un laboratoire"
-									onclick="affichageFormulaireAjoutLabo()" />
+									   onclick="affichageFormulaireAjoutLabo()" />
 							</form>
 						</td>
 					</tr>
 					<tr>
 						<td>
 							<form action="http://localhost/projetpiscine69/fonctionnalitesAdminModifLabo.php"
-								name="boutonModifLaboForm">
+								  name="boutonModifLaboForm">
 								<input type="submit" class="btnform" value="Modifier un laboratoire" />
 							</form>
 						</td>
@@ -103,7 +108,7 @@
 					<tr>
 						<td>
 							<form action="http://localhost/projetpiscine69/fonctionnalitesAdminSuppressionLabo.php"
-								name="boutonSupprimerLabo">
+								  name="boutonSupprimerLabo">
 								<input type="submit" class="btnform" value="Supprimer un laboratoire" />
 							</form>
 						</td>
@@ -120,16 +125,16 @@
 					<tr>
 						<td>
 							<form action="http://localhost/projetpiscine69/fonctionnalitesAdminAjoutService.php"
-								name="boutonAjoutServiceForm">
+								  name="boutonAjoutServiceForm">
 								<input type="submit" class="btnform"
-									value="Associer un nouveau service d'un laboratoire" />
+									   value="Associer un nouveau service d'un laboratoire" />
 							</form>
 						</td>
 					</tr>
 					<tr>
 						<td>
 							<form action="http://localhost/projetpiscine69/fonctionnalitesAdminSuppressionService.php"
-								name="boutonSupprimerService">
+								  name="boutonSupprimerService">
 								<input type="submit" class="btnform" value="Supprimer un service d'un laboratoire" />
 							</form>
 						</td>
@@ -138,8 +143,9 @@
 			</div>
 		</div>
 		<form class="formulaireAjoutMedecin" method="POST"
-			action="http://localhost/projetpiscine69/fonctionnalitesAdminAjoutMedecin.php">
-			<br>
+			  action="http://localhost/projetpiscine69/fonctionnalitesAdminAjoutMedecin.php">
+			<br>		<!-- formulaire ajour medecin qui apparait en cliquant sur le bouton correspondant -->
+
 			<p class="feature-title">VEUILLEZ SAISIR LES INFORMATIONS DU NOUVEAU MEDECIN</p>
 
 			<table>
@@ -243,8 +249,9 @@
 		</form>
 
 		<form class="formulaireAjoutLabo" method="POST"
-			action="http://localhost/projetpiscine69/fonctionnalitesAdminAjoutLabo.php">
-			<br>
+			  action="http://localhost/projetpiscine69/fonctionnalitesAdminAjoutLabo.php">
+			<br>		<!-- formulaire ajout laboratoire -->
+
 			<p class="feature-title">VEUILLEZ SAISIR LES INFORMATIONS DU NOUVEAU LABORATOIRE</p>
 
 			<table>

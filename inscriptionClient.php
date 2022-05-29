@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+		<!-- le nouveau client peut s'inscrire sur la base de donnees via cette page en saisissant toutes ses informations -->
 
 <head>
     <title>Parcours</title>
@@ -83,9 +84,9 @@
         </table>
         <?php
         include "connexionBDD.php";
-
+        //par souci de clarte et de simplification du code, tous les clients sont ici crees par l'administrateur ayant pour l'id 1 ce qui signifie qu'il faut au moins un administrateur dans le site pour pouvoir creer un client
         $idAdminActuel = 1;
-
+        //(pour les cas d'usages plus larges on peut imaginer de nombreux administrateurs qui creent chacun des clients)
 
 
         if ($BDDTrouvee) {
@@ -103,7 +104,7 @@
                 $nCarteVitale = isset($_POST['carteVitaleClient']) ? $_POST['carteVitaleClient'] : "0";
                 $requete = "INSERT INTO `hopital`.`client` (`idClient`, `nomClient`, `prenomClient`, `courrielClient`, `motDePasseClient`, `adresseClient`, `villeClient`, `codePostalClient`, `paysClient`, `telClient`, `carteVitaleClient`, `idAdmin`) VALUES (NULL, '$prenom', '$nom', '$courriel', '$mdp', '$adresse', '$ville', '$codepostal', '$pays', '$tel', '$nCarteVitale', '$idAdminActuel');";
                 $commande = mysqli_query($loginBDD, $requete);
-                echo "Votre compte a ete cree <br><br>";
+                echo "Votre compte a ete cree <br><br>"; //la creation du nouveau client a abouti
             }
         }
         ?>

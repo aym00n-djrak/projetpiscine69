@@ -72,6 +72,8 @@ if ($BDDTrouvee) {
                     }
                 </script>
             </select>
+            		<!-- tentative de recuperation des elements de bdd dans liste deroulante du html partiellement aboutie -->
+                    		<!-- on propose de saisir l'identifiant du compte du client directement pour supprimer celui qu'il souhaite -->
 
             <br>Option alternative: saisir l'id de votre compte a supprimer: <input type="text" name="idSupTextField">
             <input type="submit" name="ordreSuprression" value="Supprimer ce laboratoire" /><br>

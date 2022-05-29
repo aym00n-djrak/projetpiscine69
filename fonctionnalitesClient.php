@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+		<!-- page fonctionnalites client pour acceder a la totalite des outils dont le client dispose sur son compte -->
 
 <head>
 	<title>Parcours</title>
@@ -19,7 +20,7 @@
 </head>
 
 <body onload="affichageInitialBoutonsSansFormulaires()">
-	<?php
+	<?php //le client commence par s'identifier via requete de comparaison sql
 	if (isset($_POST['Connexion'])) {
 		$nom = isset($_POST['nomClient']) ? $_POST['nomClient'] : " ";
 		$prenom = isset($_POST['prenomClient']) ? $_POST['prenomClient'] : " ";

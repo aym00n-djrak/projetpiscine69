@@ -2,9 +2,10 @@
 include "connexionBDD.php";
 echo "page connexion client <br>";
 if ($BDDTrouvee) {
-	echo "BDD existe";
+	//echo "BDD existe";
 }
 ?>
+		<!-- requete de comparaison sql pour identifier un client selon informations saisies -->
 
 <?php
 if (isset($_POST['loginEspaceClient'])) {
@@ -21,10 +22,10 @@ if (isset($_POST['loginEspaceClient'])) {
 	$resultat = "on sait pas encore";
 	$donnee = mysqli_fetch_assoc($commande);
 	if ($donnee['idClient'] != null) {
-		$resultat = "Connexion reussie";
+		$resultat = "Connexion reussie"; //dans le cas ou un client existe selon les informations saisies
 	} else {
-		$resultat = "Aucun client trouve";
+		$resultat = "Aucun client trouve";// dans le cas ou aucun client ne correspond aux informations saisies
 	}
-	echo "<br>requete formulee $requete";
+	//echo "<br>requete formulee $requete";
 	echo "<br>Resultat identification: $resultat<br><br>";
 }

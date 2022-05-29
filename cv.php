@@ -7,8 +7,7 @@ $idMedecin = 1; $nomMedecin; $prenomMedecin; $specialiteMedecin;
 $courrielMedecin; $telephoneMedecin; $formationsMedecin; $experiencesMedecin;
 echo "page cv <br>";
 if ($BDDTrouvee) {
-    echo "BDD existe<br><br>";
-
+//recuperation des informations liees au medecin pour affichage de son cv
 
 	$requeteAffichage = "SELECT * FROM medecin where idmedecin = '$idMedecin'";
 	$commandeAffichage = mysqli_query($loginBDD, $requeteAffichage);
@@ -32,10 +31,13 @@ if ($BDDTrouvee) {
 
 </head>
 </html>
+		<!-- lien avec un fichier xml avec extension php pour recuperer les informations de la base de donnees -->
 
 <?xml version="1.0" encoding ="utf-8"?>
 <!DOCTYPE cvs SYSTEM >
 <cvs>	<cv id="<?php echo $idMedecin;?>">
+		<!-- effet de style pour le visuel du cv -->
+
 		<etatcivil><?php echo"
 <style>
 table, th, td {

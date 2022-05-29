@@ -1,4 +1,5 @@
 <?php
+//connexion bdd
 include "connexionBDD.php";
 echo "page connexion médecin
 <br>";
@@ -73,6 +74,7 @@ if($BDDTrouvee){
         </table>
     </div>
     <?php
+    //requete de comparaison d'informations saisies avec la base de donnees pour identification
 if(isset($_POST['loginEspaceMedecin'])){
 	$nom = isset($_POST['nomMedecin']) ? $_POST['nomMedecin'] : " "; 
 	$prenom = isset($_POST['prenomMedecin']) ? $_POST['prenomMedecin'] : " "; 

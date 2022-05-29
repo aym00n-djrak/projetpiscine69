@@ -2,10 +2,11 @@
 include "connexionBDD.php";
 echo "page connexion medecin <br>";
 if ($BDDTrouvee) {
-	echo "BDD existe";
+	//echo "BDD existe";
 }
 ?>
 <?php
+//par une requete de comparaison le medecin se connecte a la base de donnees pour profiter de ses diverses fonctionnalites
 if (isset($_POST['loginEspaceMedecin'])) {
 	$nom = isset($_POST['nomMedecin']) ? $_POST['nomMedecin'] : " ";
 	$prenom = isset($_POST['prenomMedecin']) ? $_POST['prenomMedecin'] : " ";

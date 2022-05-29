@@ -44,12 +44,14 @@ include "connexionBDD.php";
     </nav>
 
    <form action="http://localhost/projetpiscine69/fonctionnalitesAdmin.html" name="boutonRetourForm"><input type="submit" class="boutonRetour" value="Retour" /> <br /> </form>
-        <form method="POST">
+        <form method="POST">		<!-- tentative d'affichage de liste des laboratoires a modifier sur liste deroulante partiellement aboutie -->
+
             <br />VEUILLEZ CHOISIR LE LABORATOIRE A MODIFIER: <select name="laboAModifier">
                 <option>choisir...</option>
                 <option value=1>Salle1 Tel1</option>
                 <option value=2>Salle2 Tel2</option>
-            </select>
+            </select>		<!-- on propose d'afficher la liste des laboratoire et de saisir directement l'identifiant du laboratoire dont on souhaite modifier un/des element/s -->
+
             <br>Option alternative: saisir l'id du laboratoire e modifier: <input type="text" name="idModifTextField">
             <br /><br />VEUILLEZ SAISIR LES INFORMATIONS A MODIFIER<br />
             <br />
