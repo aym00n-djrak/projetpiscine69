@@ -58,7 +58,7 @@
                                 </p>
                             </td>
                             <td>
-                                <p class="feature-title">Liste des Labos</p>
+                                <p class="feature-title">Liste des laboratoires par salle</p>
 
                                 <p>
                                     <?php for ($i = 0; $i < COUNT($tabsalle); $i++) { ?>

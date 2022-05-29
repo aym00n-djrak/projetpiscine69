@@ -73,12 +73,12 @@ if ($BDDTrouvee) {
                             <td>Carte Vitale :</td>
                             <td><input type="number" name="numCarteVitaleClient" /></td>
                             <!--Mot de passe-->
-                            <td>Password :</td>
+                            <td>Mot de passe :</td>
                             <td><input type="password" name="mdpClient" /></td>
                         </tr>
                         <tr>
                             <!--Numero carte bancaire-->
-                            <td>Ne carte bancaire :</td>
+                            <td>Numero carte bancaire :</td>
                             <td><input type="password" name="numCarteBancaireClient" /></td>
                         </tr>
                         <tr>

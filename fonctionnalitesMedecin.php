@@ -46,7 +46,7 @@ include "phpclient/loadclient.php";
     </nav>
     <form class="formulaireLoginMedecin" method="POST" action="finirrdv.php">
         <div class="container features">
-            <p class="Titre-Section">Connexion medecin</p>
+            <p class="Titre-Section">Bienvenue dans votre espace medecin</p>
             <table>
                 <tr>
                     <!--Liste dossiers clients = rendez-vous finis-->

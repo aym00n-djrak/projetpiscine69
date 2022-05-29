@@ -82,7 +82,6 @@ $idClientActuel = $_SESSION['idClient'];
             <input type="submit" name="ordrepaiement" value="Payer" />
             <?php
             if ($BDDTrouvee) {
-                echo "<br><br><br>BDD existe<br>";
 
                 if ($BDDTrouvee) {
                     $requeteAffichage = "SELECT * FROM servicelabo";
@@ -94,7 +93,7 @@ $idClientActuel = $_SESSION['idClient'];
                     $requeteAffichage = "SELECT * from comptebancaire where idclient=$idClientActuel";
                     $commandeAffichage = mysqli_query($loginBDD, $requeteAffichage);
                     while ($donnee = mysqli_fetch_assoc($commandeAffichage)) {
-                        echo "Compte avec id " . $donnee['idCompte'] . " de num�ro de carte  " . $donnee['numCarteCompte'] . '<br>';
+                        echo "<b>Compte</b> avec <b>id</b> " . $donnee['idCompte'] . " de <b>numero de carte</b>  " . $donnee['numCarteCompte'] . '<br>';
                     }
                 }
                 if (isset($_POST['ordrepaiement'])) {

@@ -3,16 +3,15 @@ include "connexionBDD.php";
 include "client.php";
 echo "page suppression compte bancaire <br>";
 if ($BDDTrouvee) {
-    echo "BDD existe";
     $idclient = $_SESSION['idClient'];
     $liste_id_comptes = array();
     $requeteAffichage = "SELECT * FROM comptebancaire where comptebancaire.idclient = $idclient;";
     $commandeAffichage = mysqli_query($loginBDD, $requeteAffichage);
     while ($donnee = mysqli_fetch_assoc($commandeAffichage)) {
-        echo "id compte pour le client $idclient:"  . $donnee['idCompte'] . '<br>';
+        //echo "id compte pour le client $idclient:"  . $donnee['idCompte'] . '<br>';
         array_push($liste_id_comptes, $donnee['idCompte']);
     }
-    print_r($liste_id_comptes);
+    //print_r($liste_id_comptes);
     $taileListeIdcomptes = count($liste_id_comptes);
 }
 ?>
@@ -85,6 +84,11 @@ if ($BDDTrouvee) {
                 $commande = mysqli_query($loginBDD, $requete);
                 echo "<br>Suppression compte avec id $idASupprimer du client $idclient OK<br><br>";
             }
+                           $requeteAffichage = "SELECT * from comptebancaire where idclient=$idclient";
+                    $commandeAffichage = mysqli_query($loginBDD, $requeteAffichage);
+                    while ($donnee = mysqli_fetch_assoc($commandeAffichage)) {
+                        echo "<b>Compte</b> avec <b>id</b> " . $donnee['idCompte'] . " de <b>numero de carte</b>  " . $donnee['numCarteCompte'] . '<br>';
+                    }
             ?>
         </form>
     </div>

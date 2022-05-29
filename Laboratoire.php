@@ -42,14 +42,14 @@
     <div class="row">
 
       <div class="col-lg-6 col-md-6 col-sm-12">
-        <p class="feature-title">Vous desirez voir les services proposez ?<br>Clicker ici :</p>
+        <p class="feature-title">Vous desirez voir les services proposes ?<br>Cliquez ici :</p>
         <a href="ServicesLabo.html">
           <input type="button" name="Services" value="Nos Services" text-align="center">
         </a>
       </div>
 
       <div class="col-lg-6 col-md-6 col-sm-12">
-        <h3 class="feature-title">Salles disponiles :</h3>
+        <h3 class="feature-title">Salles disponibles :</h3>
         <p>
           <?php for ($i = 0; $i < COUNT($tabsalle); $i++) {
             echo $tabsalle[$i]."<br>";
